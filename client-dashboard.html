@@ -126,7 +126,16 @@
             <div id="tab-services" class="tab-content block">
                 <div class="flex justify-between items-center mb-6" data-aos="fade-in">
                     <div>
-                        <h2 class="text-2xl font-bold text-slate-800">Welcome back Client</h2>
+                        <h2 id="welcome-message-client" class="text-2xl font-bold text-slate-800">Welcome back Client</h2>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                                if (currentUser && (currentUser.firstName || currentUser.lastName)) {
+                                    const name = (currentUser.firstName + ' ' + (currentUser.lastName || '')).trim();
+                                    document.getElementById('welcome-message-client').innerText = 'Welcome back ' + name;
+                                }
+                            });
+                        </script>
                         <p class="text-slate-500 text-sm">Manage and monitor your active deployments</p>
                     </div>
                     <button

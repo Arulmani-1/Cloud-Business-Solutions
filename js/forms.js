@@ -47,10 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (roleSelect && emailInput) {
             const role = roleSelect.value;
-            const email = emailInput.value;
+            const email = emailInput.value.trim();
+            
+            // Default names based on role (Direct Login)
+            let firstName = role === 'admin' ? 'Admin' : 'Client';
+            let lastName = '';
+            
+            // Check if user previously signed up with this email
+            const users = JSON.parse(localStorage.getItem('registeredUsers')) || {};
+            if (users[email]) {
+                firstName = users[email].firstName;
+                lastName = users[email].lastName;
+            }
             
             // Store user info
-            localStorage.setItem('currentUser', JSON.stringify({ role, email }));
+            localStorage.setItem('currentUser', JSON.stringify({ role, email, firstName, lastName }));
             
             // Redirect based on role
             if (role === 'admin') {
@@ -61,7 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    setupForm('signup-form', 'signup-success');
+    // Signup form specific logic
+    setupForm('signup-form', 'signup-success', (form) => {
+        const textInputs = form.querySelectorAll('input[type="text"]');
+        const firstName = textInputs[0] ? textInputs[0].value.trim() : '';
+        const lastName = textInputs[1] ? textInputs[1].value.trim() : '';
+        const emailInput = form.querySelector('input[type="email"]');
+        const email = emailInput ? emailInput.value.trim() : '';
+        
+        if (email) {
+            // Store user details in localStorage
+            const users = JSON.parse(localStorage.getItem('registeredUsers')) || {};
+            users[email] = { firstName, lastName };
+            localStorage.setItem('registeredUsers', JSON.stringify(users));
+        }
+        
+        form.reset();
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+    });
     
     // Redirect to 404 page after newsletter subscription
     setupForm('newsletter-form', 'newsletter-success', (form) => {
