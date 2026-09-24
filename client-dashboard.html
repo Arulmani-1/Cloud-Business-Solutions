@@ -657,26 +657,32 @@
 
                         <div class="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
                             <h3 class="text-lg font-bold text-slate-800 mb-6">Security & Password</h3>
-                            <form class="space-y-5 max-w-md">
+                            <form id="security-password-form" class="space-y-5 max-w-md" novalidate>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-600 mb-1">Current
                                         Password</label>
-                                    <input type="password"
-                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                    <input type="password" id="current-password" placeholder="••••••••"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm transition-colors">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-600 mb-1">New Password</label>
-                                    <input type="password"
-                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                    <input type="password" id="new-password" placeholder="••••••••"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm transition-colors">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-slate-600 mb-1">Confirm New
                                         Password</label>
-                                    <input type="password"
-                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                    <input type="password" id="confirm-password" placeholder="••••••••"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm transition-colors">
+                                </div>
+                                <div id="password-form-alert" class="hidden p-3.5 rounded-lg bg-red-50 border border-red-200 text-red-600 text-xs font-semibold flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span id="password-alert-text">Please fill out all password fields first.</span>
                                 </div>
                                 <div class="pt-2">
-                                    <button type="button"
+                                    <button type="submit" id="update-password-btn"
                                         class="bg-slate-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-sm">Update
                                         Password</button>
                                 </div>
@@ -858,15 +864,83 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Security & Password Form Validation & Redirection
+            const pwdForm = document.getElementById('security-password-form');
+            if (pwdForm) {
+                pwdForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const currentPwd = document.getElementById('current-password');
+                    const newPwd = document.getElementById('new-password');
+                    const confirmPwd = document.getElementById('confirm-password');
+                    const alertBox = document.getElementById('password-form-alert');
+                    const alertText = document.getElementById('password-alert-text');
+                    
+                    let isValid = true;
+                    
+                    // Reset field borders
+                    [currentPwd, newPwd, confirmPwd].forEach(input => {
+                        if (input) {
+                            input.classList.remove('border-red-500', 'bg-red-50/40');
+                            input.classList.add('border-slate-200');
+                        }
+                    });
+                    if (alertBox) alertBox.classList.add('hidden');
+                    
+                    // Check empty fields
+                    const fields = [
+                        { input: currentPwd, label: 'Current Password' },
+                        { input: newPwd, label: 'New Password' },
+                        { input: confirmPwd, label: 'Confirm New Password' }
+                    ];
+                    
+                    fields.forEach(f => {
+                        if (!f.input || !f.input.value.trim()) {
+                            isValid = false;
+                            if (f.input) {
+                                f.input.classList.remove('border-slate-200');
+                                f.input.classList.add('border-red-500', 'bg-red-50/40');
+                            }
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        if (alertBox && alertText) {
+                            alertText.textContent = 'Please fill out all password fields first.';
+                            alertBox.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                    
+                    // All fields filled -> Redirect to 404 page
+                    window.location.href = '404.html';
+                });
+
+                // Clear validation errors on typing
+                ['current-password', 'new-password', 'confirm-password'].forEach(id => {
+                    const input = document.getElementById(id);
+                    if (input) {
+                        input.addEventListener('input', () => {
+                            input.classList.remove('border-red-500', 'bg-red-50/40');
+                            input.classList.add('border-slate-200');
+                            const alertBox = document.getElementById('password-form-alert');
+                            if (alertBox) alertBox.classList.add('hidden');
+                        });
+                    }
+                });
+            }
+
             document.body.addEventListener('click', (e) => {
                 const button = e.target.closest('button');
                 if (!button) return;
+                
+                if (button.id === 'update-password-btn' || button.closest('#security-password-form')) return;
                 
                 const text = button.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
                 const targetKeywords = [
                     'deploy new service', 'manage', 'update payment method', 
                     'download all', 'submit ticket', 'upload new', 'remove', 
-                    'save changes', 'update password', 'delete account',
+                    'save changes', 'delete account',
                     'generate new key', 'copy'
                 ];
                 

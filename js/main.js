@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'signup free', 'view more', 'explore the technology',
             'deploy new service', 'manage', 'update payment method',
             'download all', 'submit ticket', 'upload new', 'remove',
-            'save changes', 'update password', 'delete account',
+            'save changes', 'delete account',
             'generate new key', 'copy', 'view all', 'add user',
             'report', 'export', 'view ticket', 'save global config',
             'update smtp', 'clear system cache', 'force database restart',
