@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-12 w-auto object-contain"></a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 active text-blue-600">HOME</a>
+                    <a href="about.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">ABOUT US</a>
+                    <a href="services.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">SERVICES</a>
+                    <a href="blog.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">BLOG</a>
+                    <a href="domain.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">DOMAIN</a>
+                    <a href="contact.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">CONTACT</a>
+                </div>
+
+                <!-- Right Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">LOGIN</a>
+                    <a href="signup.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">SIGN UP</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full h-screen overflow-y-auto pb-24 bg-white shadow-xl border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">About Us</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Services</a>
+                <a href="blog.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Blog</a>
+                <a href="domain.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Domain</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Contact</a>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2">
+                    <a href="login.html" class="block w-full text-center px-4 py-2 text-base font-medium text-slate-700 border border-slate-200 rounded-md">Login</a>
+                    <a href="signup.html" class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    
+    <section class="pt-40 pb-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Blog</h1>
+            <h2 class="text-2xl font-bold text-blue-600 mb-6">Latest Insights & Technology Trends</h2>
+        </div>
+    </section>
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_350px] gap-12">
+            
+            <!-- Main Content -->
+            <div class="blog-content">
+                <img src="assets/images/blog/object_storage.webp" alt="Introducing Object Storage" class="w-full h-auto object-cover mb-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]" data-aos="fade-in">
+                <span class="bg-blue-600 text-white text-[10px] font-bold px-4 py-2 uppercase tracking-widest shadow-md rounded-sm mb-6 inline-block">Cloud & Data</span>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#050817] to-blue-600 mb-8 leading-tight tracking-tight">Introducing Object Storage</h1>
+                <p class="text-[#64748B] mb-6 leading-relaxed">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+                <p class="text-[#64748B] mb-12 leading-relaxed">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.</p>
+
+                <blockquote class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-10 md:p-14 text-center rounded-2xl mb-12 shadow-[0_20px_50px_rgba(15,23,42,0.3)] transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden" data-aos="fade-up">
+                    <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam "</p>
+                    <footer class="flex items-center justify-center text-[10px] font-bold uppercase tracking-widest text-slate-300 before:content-[''] before:w-8 before:h-[1px] before:bg-blue-600 before:mr-4">BY COURTNEY HENRY</footer>
+                </blockquote>
+
+                <p class="text-[#64748B] mb-12 leading-relaxed">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. <strong>No one rejects, dislikes or avoids pleasure itself</strong> because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain</p>
+
+                <img src="assets/images/blog/protect_data.webp" alt="Full Storage" class="w-full h-auto object-cover mb-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]" data-aos="fade-in">
+
+                <h2 class="text-2xl font-bold text-[#050817] mb-6">Full Storage: Who Is Responsible?</h2>
+                <p class="text-[#64748B] mb-8 leading-relaxed">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+
+                <h3 class="text-lg font-bold text-[#050817] mb-6">Key Points To Remember:</h3>
+                <ul class="space-y-4 mb-12 text-[#64748B]">
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Suspendisse ullamcorper diam sit amet nunc auctor, a lacinia augue ornare.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Morbi sed enim lobortis, mollis nunc non, facilisis magna.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Praesent convallis tellus quis metus dapibus, vitae bibendum dui gravida.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Pellentesque bibendum risus luctus dolor consequat, et bibendum est tincidunt.</li>
+                </ul>
+
+                <p class="text-[#64748B] mb-12 leading-relaxed pb-8 border-b border-slate-200">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter</p>
+
+                <!-- Tags & Share -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-16">
+                    <div>
+                        <span class="block text-sm font-bold text-[#050817] mb-3">Tags:</span>
+                        <div class="flex gap-2">
+                            <a href="#" class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
+                            <a href="#" class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="block text-sm font-bold text-[#050817] mb-3 sm:text-right">Share :</span>
+                        <div class="flex gap-2">
+                            <a href="#" class="w-8 h-8 rounded-full bg-[#3b5998] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">f</a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-[#1da1f2] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">X</a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-[#0077b5] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">in</a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-[#bd081c] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">P</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Author Box -->
+                <div class="bg-white/60 backdrop-blur-md border border-white p-8 md:p-10 rounded-2xl mb-16 flex flex-col md:flex-row gap-8 items-start shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <div class="w-24 h-24 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0 mx-auto md:mx-0 shadow-lg">
+                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="text-center md:text-left flex-grow">
+                        <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
+                            <div>
+                                <h4 class="text-xl font-bold text-[#050817] mb-1">Arulmani Design</h4>
+                                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">BY ADMIN</span>
+                            </div>
+                            <div class="flex gap-3 text-[10px] font-bold text-slate-400">
+                                <a href="#" class="hover:text-blue-600">FB</a>
+                                <a href="#" class="hover:text-blue-600">TW</a>
+                                <a href="#" class="hover:text-blue-600">IN</a>
+                                <a href="#" class="hover:text-blue-600">PI</a>
+                            </div>
+                        </div>
+                        <p class="text-[#64748B] text-sm leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
+                    </div>
+                </div>
+
+                <!-- Comments -->
+                <h3 class="text-2xl font-bold text-[#050817] mb-8">3 Comments</h3>
+                <div class="space-y-8 mb-16">
+                    <div class="flex gap-6">
+                        <div class="w-16 h-16 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0">
+                        <svg class="w-12 h-12 text-white mt-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <h5 class="font-bold text-[#050817]">A WordPress Commenter <span class="text-[10px] text-blue-600 uppercase tracking-widest ml-3">MAY 18, 2022</span></h5>
+                                <a href="#" class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1">Reply <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg></a>
+                            </div>
+                            <p class="text-[#64748B] text-sm leading-relaxed">To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reply Form -->
+                <h3 class="text-2xl font-bold text-[#050817] mb-4">Leave A Reply</h3>
+                <p class="text-[#64748B] text-sm mb-8">Your email address will not be published. Required fields are marked *</p>
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm text-[#64748B] mb-2">Comment *</label>
+                        <textarea rows="6" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors resize-none py-2"></textarea>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm text-[#64748B] mb-2">Name *</label>
+                            <input type="text" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-[#64748B] mb-2">Email *</label>
+                            <input type="email" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-[#64748B] mb-2">Website</label>
+                            <input type="url" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2">
+                        <input type="checkbox" id="save-info" class="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <label for="save-info" class="text-sm text-[#64748B]">Save my name, email, and website in the browser for the next time I comment</label>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300 mt-4">Post Comment <svg class="w-4 h-4 inline-block ml-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></button>
+                </form>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-10">
+                
+                <!-- Search -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <form class="flex">
+                        <input type="text" placeholder="Search ..." class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none">
+                        <button type="submit" class="bg-blue-600 text-white px-5 py-3 hover:bg-blue-700 transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></button>
+                    </form>
+                </div>
+
+                <!-- Author Mini -->
+                <div class="bg-white p-8 text-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <div class="w-24 h-24 rounded-full bg-[#cbd5e1] border-[3px] border-blue-600 flex items-center justify-center overflow-hidden mx-auto mb-6 shadow-lg">
+                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-[#050817] mb-2">Arulmani Design</h4>
+                    <p class="text-xs text-[#64748B] mb-6">Designation : <span class="text-slate-400">Cloud Author</span></p>
+                    <div class="flex justify-center gap-3 text-white">
+                        <a href="#" class="w-7 h-7 rounded-full bg-[#3b5998] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">f</a>
+                        <a href="#" class="w-7 h-7 rounded-full bg-[#1da1f2] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">X</a>
+                        <a href="#" class="w-7 h-7 rounded-full bg-[#0077b5] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">in</a>
+                        <a href="#" class="w-7 h-7 rounded-full bg-[#bd081c] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">P</a>
+                    </div>
+                </div>
+
+                <!-- Recent Posts -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <h4 class="text-lg font-bold text-[#050817] mb-6">Recent Post</h4>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-center group">
+                            <img src="assets/images/blog/ccpa_compliance.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <div>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
+                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">CCPA Compliance Update</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center group">
+                            <img src="assets/images/blog/object_storage.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <div>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
+                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Introducing Object Storage!</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center group">
+                            <img src="assets/images/blog/content_marketing.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <div>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
+                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Content Marketing</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center group">
+                            <img src="assets/images/blog/security_apis.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <div>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
+                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Security APIs In Cloud</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <h4 class="text-lg font-bold text-[#050817] mb-6">Categories</h4>
+                    <ul class="space-y-0 text-sm font-bold text-slate-500 uppercase tracking-widest text-[10px]">
+                        <li><a href="#" class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD & DATA</a></li>
+                        <li><a href="#" class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD ANALYTICS</a></li>
+                        <li><a href="#" class="flex items-center py-3 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD TECHNOLOGIES</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <h4 class="text-lg font-bold text-[#050817] mb-6">Popular Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
+                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Development</a>
+                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
+                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">SEO</a>
+                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Storage</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                    <h4 class="text-lg font-bold text-[#050817] mb-6">Newsletter</h4>
+                    <form>
+                        <input type="email" placeholder="Email Address" class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none mb-4">
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 bg-slate-50 text-center border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <span class="text-xs font-bold text-blue-600 tracking-widest uppercase mb-6 inline-block border-b-2 border-blue-600 pb-1">OUR OFFER</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#050817] mb-10 leading-tight">Register For Our Free 7 Day Trial<br class="hidden md:block"> Now</h2>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+                <!-- Signup Free Button -->
+                <a href="signup.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded shadow-lg transition-all group">
+                    Signup Free
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                
+                <!-- Get Started Button -->
+                <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded shadow-lg shadow-blue-600/30 transition-all group">
+                    Get Started
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#020617] pt-20 pb-10 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Column 1 -->
+                <div class="footer-col opacity-0">
+                    <a href="index.html" class="flex items-center mb-6"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-16 w-auto object-contain brightness-0 invert"></a>
+                    <p class="text-sm text-[#94A3B8] mb-8 leading-relaxed">
+                        Your premium technology partner for modern cloud business. Build, scale, secure, and manage your digital operations with Stackly.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(36,99,255,0.5)]">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <!-- Similar icons for FB, IG, LinkedIn omitted for brevity but representable via generic icons -->
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">in</a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">f</a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">COMPANY</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Home</a></li>
+                        <li><a href="about.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>About Us</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Services</a></li>
+                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Blog</a></li>
+                        <li><a href="domain.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Domain</a></li>
+                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">EXPLORE</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cloud Hosting</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cloud Analytics</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cyber Security</a></li>
+                        <li><a href="login.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Login</a></li>
+                        <li><a href="signup.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Signup</a></li>
+                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>404 Page</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">NEWSLETTER</h4>
+                    <p class="text-sm mb-6 leading-relaxed">
+                        Subscribe to receive exclusive cloud insights, technology updates, and Stackly business solutions.
+                    </p>
+                    <form id="newsletter-form" class="relative">
+                        <div class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-full border border-white/10 focus-within:border-blue-500 transition-colors">
+                            <input type="email" placeholder="Email Address" required class="bg-transparent border-none outline-none text-white px-4 py-3 w-full text-sm placeholder-slate-400 focus:ring-0">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-105 shadow-[0_0_15px_rgba(36,99,255,0.4)] mt-2 sm:mt-0">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p id="newsletter-success" class="absolute -bottom-8 left-0 text-sm text-green-400 hidden">Thanks for subscribing!</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-white/10 mb-8">
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#94A3B8]">
+                <p>© 2026 Stackly. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+
+</body>
+</html>
+

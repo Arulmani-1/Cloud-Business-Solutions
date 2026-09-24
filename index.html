@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Cloud Business Solutions</title>
+    <meta name="description" content="Secure, scalable and intelligent cloud solutions designed to help modern businesses grow faster.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-12 w-auto object-contain"></a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 active text-blue-600">HOME</a>
+                    <a href="about.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">ABOUT US</a>
+                    <a href="services.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">SERVICES</a>
+                    <a href="blog.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">BLOG</a>
+                    <a href="domain.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">DOMAIN</a>
+                    <a href="contact.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">CONTACT</a>
+                </div>
+
+                <!-- Right Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">LOGIN</a>
+                    <a href="signup.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">SIGN UP</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-blue-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full h-screen overflow-y-auto pb-24 bg-white shadow-xl border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">About Us</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Services</a>
+                <a href="blog.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Blog</a>
+                <a href="domain.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Domain</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Contact</a>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2">
+                    <a href="login.html" class="block w-full text-center px-4 py-2 text-base font-medium text-slate-700 border border-slate-200 rounded-md">Login</a>
+                    <a href="signup.html" class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Content -->
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6 animate-pulse">
+                        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                        Next-Gen Cloud Platform
+                    </div>
+                    <h1 class="hero-title text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 text-balance">
+                        Powering Smarter <br>
+                        <span class="gradient-text">Digital Business</span> <br>
+                        With Cloud Technology
+                    </h1>
+                    <p class="hero-subtitle text-lg lg:text-xl text-slate-600 mb-8 max-w-lg text-balance">
+                        Secure, scalable and intelligent cloud solutions designed to help modern businesses grow faster.
+                    </p>
+                    <div class="hero-buttons flex flex-wrap items-center gap-4">
+                        <a href="services.html" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 hover-lift">
+                            EXPLORE SOLUTIONS
+                        </a>
+                        <a href="signup.html" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 border border-slate-200 transition-colors shadow-sm hover-lift flex items-center gap-2">
+                            GET STARTED
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image -->
+                <div class="hero-image relative lg:ml-10">
+                    <div class="absolute inset-0 bg-blue-500 rounded-full blur-[100px] opacity-20 animate-pulse"></div>
+                    <img src="assets/images/cloud-hero.webp" alt="Cloud Infrastructure" class="relative z-10 w-full rounded-2xl shadow-2xl shadow-blue-900/10 hover-lift" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Companies -->
+    <section class="py-12 border-y border-slate-200 bg-white overflow-hidden" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative group">
+            <p class="text-sm font-bold text-slate-400 tracking-widest uppercase mb-8">Trusted By Modern Businesses</p>
+            <div class="relative flex overflow-hidden w-full">
+                <div class="animate-marquee min-w-full whitespace-nowrap flex justify-around gap-8 md:gap-16 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500 pr-8 md:pr-16">
+                    <h3 class="text-2xl font-black text-slate-700">ACME Corp</h3>
+                    <h3 class="text-2xl font-black text-slate-700">GlobalTech</h3>
+                    <h3 class="text-2xl font-black text-slate-700">InnovateAI</h3>
+                    <h3 class="text-2xl font-black text-slate-700">NextGen</h3>
+                    <h3 class="text-2xl font-black text-slate-700">NexusData</h3>
+                </div>
+                <div class="absolute top-0 animate-marquee2 min-w-full whitespace-nowrap flex justify-around gap-8 md:gap-16 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500 pr-8 md:pr-16" aria-hidden="true">
+                    <h3 class="text-2xl font-black text-slate-700">ACME Corp</h3>
+                    <h3 class="text-2xl font-black text-slate-700">GlobalTech</h3>
+                    <h3 class="text-2xl font-black text-slate-700">InnovateAI</h3>
+                    <h3 class="text-2xl font-black text-slate-700">NextGen</h3>
+                    <h3 class="text-2xl font-black text-slate-700">NexusData</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Solutions -->
+    <section class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-sm font-bold text-blue-600 tracking-wider uppercase mb-3 block">OUR SERVICES</span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Complete Cloud Solutions For Modern Businesses</h2>
+                <p class="text-lg text-slate-600">We provide enterprise-grade infrastructure that scales with your business needs securely and efficiently.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover-lift group relative overflow-hidden transition-all duration-300 group-hover:shadow-[inset_0_-4px_0_0_#0B1638]" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1 bg-[#0B1638] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cloud Hosting</h3>
+                        <p class="text-slate-600 mb-6 text-sm">High-performance servers with 99.99% uptime guarantee and global edge caching.</p>
+                        <a href="services.html" class="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700">
+                            Learn More <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover-lift group relative overflow-hidden transition-all duration-300 group-hover:shadow-[inset_0_-4px_0_0_#0B1638]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1 bg-[#0B1638] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cloud Analytics</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Turn raw data into actionable insights with our intelligent machine learning tools.</p>
+                        <a href="services.html" class="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700">
+                            Learn More <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover-lift group relative overflow-hidden transition-all duration-300 group-hover:shadow-[inset_0_-4px_0_0_#0B1638]" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1 bg-[#0B1638] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cyber Security</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Enterprise-grade protection with DDoS mitigation, firewalls, and encryption.</p>
+                        <a href="services.html" class="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700">
+                            Learn More <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover-lift group relative overflow-hidden transition-all duration-300 group-hover:shadow-[inset_0_-4px_0_0_#0B1638]" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-1 bg-[#0B1638] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Business Infrastructure</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Fully managed infrastructure tailored to support complex B2B operations.</p>
+                        <a href="services.html" class="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700">
+                            Learn More <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Simple Steps -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-sm font-bold text-blue-600 tracking-wider uppercase mb-3 block" data-aos="fade-up">HOW IT WORKS</span>
+            <h2 class="text-4xl font-bold text-slate-900 mb-16" data-aos="fade-up" data-aos-delay="100">3 Simple Steps To Power Your Business</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative border-t-4 border-t-blue-500 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-6xl font-black text-slate-100 absolute top-4 right-6 z-0">01</div>
+                    <div class="relative z-10 text-left">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Choose Your Cloud Infrastructure</h3>
+                        <p class="text-slate-600 text-sm mb-6">Select from our range of high-performance servers tailored to your exact business requirements.</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative border-t-4 border-t-blue-500 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-6xl font-black text-slate-100 absolute top-4 right-6 z-0">02</div>
+                    <div class="relative z-10 text-left">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Configure Your Business Platform</h3>
+                        <p class="text-slate-600 text-sm mb-6">Setup analytics, security rules, and integrations using our intuitive enterprise dashboard.</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative border-t-4 border-t-blue-500 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-6xl font-black text-slate-100 absolute top-4 right-6 z-0">03</div>
+                    <div class="relative z-10 text-left">
+                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Launch And Scale Your Digital Operations</h3>
+                        <p class="text-slate-600 text-sm mb-6">Deploy globally in seconds and let our intelligent systems handle traffic scaling automatically.</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right" class="flex justify-center">
+                    <img src="assets/images/about-us.webp" alt="Web Hosting Infrastructure" class="w-full max-w-md hover-lift">
+                </div>
+                <div data-aos="fade-left">
+                    <span class="text-sm font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block underline underline-offset-8 decoration-2">ABOUT US</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">We Are More Than Web Hosting Company</h2>
+                    <p class="text-slate-600 mb-10 text-sm leading-relaxed">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-4xl font-bold text-blue-600 mb-3">20%</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                It is a long established fact that a reader will be distracted by the readable.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-bold text-blue-600 mb-3">60%</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                It is a long established fact that a reader will be distracted by the readable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Differentiators -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-sm font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block underline underline-offset-8 decoration-2">OTHER FEATURES</span>
+                <h2 class="text-4xl font-bold text-slate-900">Our Key Differentiators</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Geographic Footprint</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">One Click Apps</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Full Resource Control</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Upload ISO / Mount ISO</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Linux, Windows And BSD</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-[#F8FAFC] rounded-2xl p-8 flex gap-5 hover-lift transition-all" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 flex items-center justify-center text-blue-600">
+                            <svg class="w-8 h-8 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">No Long Term Contracts</h3>
+                        <p class="text-[13px] text-slate-500 leading-relaxed">It is a long established fact that a reader will be distracted by the of readable content Deploy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-sm font-bold text-blue-600 tracking-[0.2em] uppercase mb-4 block underline underline-offset-8 decoration-2">PRICING PLANS</span>
+                <h2 class="text-4xl font-bold text-slate-900">Our Powerful Pricing Plans</h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 relative group" data-aos="fade-up" data-aos-delay="100">
+
+                    
+                    <div class="p-8 text-center bg-[#F8FAFC] relative z-10">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Basic Plan</h3>
+                        <p class="text-xs text-slate-500 mb-6">You Can Save Upto 30% Then Regular Plans</p>
+                        <div class="inline-block bg-[#0B1638] text-white rounded-full px-8 py-2 font-bold text-xl">
+                            $ 28/ <span class="text-sm font-normal">M</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-transparent">
+                        <ul class="space-y-4 mb-8 text-[13px] font-medium">
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Feedback System</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Social Integration</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-400 line-through"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Push Notifications</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-400 line-through"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Relevant App Content</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-400 line-through"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Log-in via Social Media</li>
+                        </ul>
+                        <div class="text-center mt-8">
+                            <a href="#" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-xs uppercase tracking-wider group-hover:bg-blue-600 group-hover:text-white px-6 py-3 rounded-lg transition-all duration-300">
+                                Purchase Now <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Plan -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 relative group" data-aos="fade-up" data-aos-delay="200">
+
+                    
+                    <div class="p-8 text-center bg-[#F8FAFC] relative z-10">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Startup Plan</h3>
+                        <p class="text-xs text-slate-500 mb-6">You Can Save Upto 30% Then Regular Plans</p>
+                        <div class="inline-block bg-[#0B1638] text-white rounded-full px-8 py-2 font-bold text-xl">
+                            $ 40/ <span class="text-sm font-normal">M</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-transparent">
+                        <ul class="space-y-4 mb-8 text-[13px] font-medium">
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Feedback System</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Social Integration</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Push Notifications</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-400 line-through"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Relevant App Content</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-400 line-through"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Log-in via Social Media</li>
+                        </ul>
+                        <div class="text-center mt-8">
+                            <a href="#" class="inline-flex items-center gap-2 text-white font-semibold text-xs uppercase tracking-wider bg-blue-600 px-6 py-3 rounded-lg transition-all duration-300">
+                                Purchase Now <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth Plan -->
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl transition-all duration-300 relative group" data-aos="fade-up" data-aos-delay="300">
+
+                    
+                    <div class="p-8 text-center bg-[#F8FAFC] relative z-10">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Growth Plan</h3>
+                        <p class="text-xs text-slate-500 mb-6">You Can Save Upto 30% Then Regular Plans</p>
+                        <div class="inline-block bg-[#0B1638] text-white rounded-full px-8 py-2 font-bold text-xl">
+                            $ 65/ <span class="text-sm font-normal">M</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10 bg-transparent">
+                        <ul class="space-y-4 mb-8 text-[13px] font-medium">
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Feedback System</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Social Integration</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Push Notifications</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Relevant App Content</li>
+                            <li class="flex items-center justify-center gap-3 text-slate-700"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Log-in via Social Media</li>
+                        </ul>
+                        <div class="text-center mt-8">
+                            <a href="#" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-xs uppercase tracking-wider group-hover:bg-blue-600 group-hover:text-white px-6 py-3 rounded-lg transition-all duration-300">
+                                Purchase Now <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worldwide Locations -->
+    <section class="py-24 bg-[#F8FAFC] relative border-t border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-12 items-center mb-16" data-aos="fade-up">
+                <!-- Title Left -->
+                <div>
+                    <span class="text-xs font-bold text-blue-600 tracking-wider uppercase mb-3 block">WORLDWIDE LOCATION</span>
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-[#0B1638] leading-tight">Develop Locally And<br>Deploy Globally</h2>
+                </div>
+                
+                <!-- Circle Center -->
+                <div class="hidden lg:flex justify-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100">
+                        <span class="text-2xl font-bold text-blue-600">11</span>
+                    </div>
+                </div>
+                
+                <!-- Info Right -->
+                <div class="lg:text-right">
+                    <h4 class="text-lg font-bold text-[#0B1638] mb-2">11 Total<br>Location</h4>
+                    <p class="text-slate-500 text-sm max-w-xs ml-auto">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Map Container -->
+            <div class="relative w-full max-w-5xl mx-auto mt-12" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/images/world-map.webp" alt="World Map" class="w-full h-auto mix-blend-multiply opacity-80" style="filter: contrast(1.1) brightness(1.05);">
+                
+                <!-- Location Pins -->
+                <!-- Canada -->
+                <div class="absolute group" style="top: 15%; left: 20%;">
+                    <div class="relative">
+                        <!-- Pin -->
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full animate-ping opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10"></span>
+                        <div class="w-8 h-8 text-[#94A3B8] group-hover:text-blue-600 transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer flex flex-col items-center drop-shadow-sm relative z-10">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <!-- Premium Tooltip -->
+                        <div class="absolute bottom-[110%] left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_-10px_rgba(11,22,56,0.15)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out z-20 text-center transform translate-y-3 group-hover:translate-y-0">
+                            <h5 class="text-[15px] font-bold text-[#0B1638] mb-1.5">Canada</h5>
+                            <p class="text-[12px] text-slate-500 leading-relaxed font-medium">It is a long established fact that a reader.</p>
+                            <!-- Tooltip Arrow -->
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[8px] border-transparent border-t-white/95 filter drop-shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brazil -->
+                <div class="absolute group" style="top: 72%; left: 31%;">
+                    <div class="relative">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full animate-ping opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10"></span>
+                        <div class="w-8 h-8 text-[#94A3B8] group-hover:text-blue-600 transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer flex flex-col items-center drop-shadow-sm relative z-10">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="absolute bottom-[110%] left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_-10px_rgba(11,22,56,0.15)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out z-20 text-center transform translate-y-3 group-hover:translate-y-0">
+                            <h5 class="text-[15px] font-bold text-[#0B1638] mb-1.5">Brazil</h5>
+                            <p class="text-[12px] text-slate-500 leading-relaxed font-medium">It is a long established fact that a reader.</p>
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[8px] border-transparent border-t-white/95 filter drop-shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Morocco -->
+                <div class="absolute group" style="top: 47%; left: 48%;">
+                    <div class="relative">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full animate-ping opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10"></span>
+                        <div class="w-8 h-8 text-[#94A3B8] group-hover:text-blue-600 transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer flex flex-col items-center drop-shadow-sm relative z-10">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="absolute bottom-[110%] left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_-10px_rgba(11,22,56,0.15)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out z-20 text-center transform translate-y-3 group-hover:translate-y-0">
+                            <h5 class="text-[15px] font-bold text-[#0B1638] mb-1.5">Morocco</h5>
+                            <p class="text-[12px] text-slate-500 leading-relaxed font-medium">It is a long established fact that a reader.</p>
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[8px] border-transparent border-t-white/95 filter drop-shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Russia -->
+                <div class="absolute group" style="top: 10%; left: 69%;">
+                    <div class="relative">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full animate-ping opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10"></span>
+                        <div class="w-8 h-8 text-[#94A3B8] group-hover:text-blue-600 transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer flex flex-col items-center drop-shadow-sm relative z-10">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="absolute bottom-[110%] left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_-10px_rgba(11,22,56,0.15)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out z-20 text-center transform translate-y-3 group-hover:translate-y-0">
+                            <h5 class="text-[15px] font-bold text-[#0B1638] mb-1.5">Russia</h5>
+                            <p class="text-[12px] text-slate-500 leading-relaxed font-medium">It is a long established fact that a reader.</p>
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[8px] border-transparent border-t-white/95 filter drop-shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Australia -->
+                <div class="absolute group" style="top: 82%; left: 83%;">
+                    <div class="relative">
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full animate-ping opacity-0 group-hover:opacity-60 transition-opacity duration-300 -z-10"></span>
+                        <div class="w-8 h-8 text-[#94A3B8] group-hover:text-blue-600 transition-all duration-300 transform group-hover:-translate-y-1 cursor-pointer flex flex-col items-center drop-shadow-sm relative z-10">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="absolute bottom-[110%] left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_-10px_rgba(11,22,56,0.15)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out z-20 text-center transform translate-y-3 group-hover:translate-y-0">
+                            <h5 class="text-[15px] font-bold text-[#0B1638] mb-1.5">Australia</h5>
+                            <p class="text-[12px] text-slate-500 leading-relaxed font-medium">It is a long established fact that a reader.</p>
+                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-[8px] border-transparent border-t-white/95 filter drop-shadow-sm"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog -->
+    <section class="py-24 bg-slate-50 relative border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-blue-600 tracking-wider uppercase mb-3 block">OUR POST</span>
+                <h2 class="text-4xl font-extrabold text-[#0B1638] mb-4">From Our Latest Blog</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative bg-slate-100 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                        <img src="assets/images/blog1.webp" alt="Security APIs In Cloud" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">
+                            Cloud Technologies
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                            <span class="text-blue-600">BY ADMIN</span>
+                            <span class="mx-2">/</span>
+                            <span>17 February, 2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B1638] mb-3 group-hover:text-blue-600 transition-colors">
+                            <a href="blog.html">Security APIs In Cloud</a>
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            It is a long established fact that a reader will be distracted by the readable.
+                        </p>
+                        <a href="blog.html" class="inline-flex items-center text-blue-600 font-semibold text-xs uppercase tracking-wider hover:text-blue-800 transition-colors">
+                            Read More <svg class="w-3 h-3 ml-1 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-slate-100 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                        <img src="assets/images/blog2.webp" alt="Content Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">
+                            Cloud & Data
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                            <span class="text-blue-600">BY ADMIN</span>
+                            <span class="mx-2">/</span>
+                            <span>17 February, 2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B1638] mb-3 group-hover:text-blue-600 transition-colors">
+                            <a href="blog.html">Content Marketing</a>
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            It is a long established fact that a reader will be distracted by the readable.
+                        </p>
+                        <a href="blog.html" class="inline-flex items-center text-blue-600 font-semibold text-xs uppercase tracking-wider hover:text-blue-800 transition-colors">
+                            Read More <svg class="w-3 h-3 ml-1 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative bg-slate-100 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                        <img src="assets/images/blog3.webp" alt="Introducing Object Storage!" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded">
+                            Cloud Technologies
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                            <span class="text-blue-600">BY ADMIN</span>
+                            <span class="mx-2">/</span>
+                            <span>17 February, 2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B1638] mb-3 group-hover:text-blue-600 transition-colors">
+                            <a href="blog.html">Introducing Object Storage!</a>
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            It is a long established fact that a reader will be distracted by the readable.
+                        </p>
+                        <a href="blog.html" class="inline-flex items-center text-blue-600 font-semibold text-xs uppercase tracking-wider hover:text-blue-800 transition-colors">
+                            Read More <svg class="w-3 h-3 ml-1 -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Testimonials Slider -->
+    <section class="py-24 border-y border-slate-200 bg-white overflow-hidden relative" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <div id="testimonial-slider" class="relative overflow-hidden w-full min-h-[300px]">
+                <div class="testimonial-slides flex transition-transform duration-700 ease-in-out w-[400%]">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide w-1/4 px-4">
+                        <div class="flex justify-center items-center gap-8 md:gap-16 mb-8 opacity-70 grayscale">
+                            <h3 class="text-xl font-bold text-[#430297]">yahoo!</h3>
+                            <h3 class="text-xl font-bold text-[#FF0000] flex items-center gap-1"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</h3>
+                            <h3 class="text-xl font-bold text-[#0064e0]">Meta</h3>
+                        </div>
+                        <p class="text-2xl lg:text-3xl font-medium text-slate-700 italic mb-12 text-balance leading-relaxed">
+                            "Velocity is crucial in marketing. The more campaigns we can put together, the more pages we can create, the bigger we feel, and the more touch points we have with customers."
+                        </p>
+                        <div class="flex items-center justify-center gap-4 md:gap-12">
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar2.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar3.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="flex items-center gap-4 bg-white px-6 py-2 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-110 relative z-10">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md"><img src="assets/images/testimonials/avatar1.webp" alt="Jason Roger" class="w-full h-full object-cover"></div>
+                                <div class="text-left">
+                                    <h4 class="font-bold text-slate-900 text-sm">Jason Roger</h4>
+                                    <p class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Designer</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar4.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar2.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide w-1/4 px-4">
+                        <div class="flex justify-center items-center gap-8 md:gap-16 mb-8 opacity-70 grayscale">
+                            <h3 class="text-xl font-bold text-[#FF0000] flex items-center gap-1"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</h3>
+                            <h3 class="text-xl font-bold text-[#0064e0]">Meta</h3>
+                            <h3 class="text-xl font-bold text-black">Uber</h3>
+                        </div>
+                        <p class="text-2xl lg:text-3xl font-medium text-slate-700 italic mb-12 text-balance leading-relaxed">
+                            "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+                        </p>
+                        <div class="flex items-center justify-center gap-4 md:gap-12">
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar3.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar4.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="flex items-center gap-4 bg-white px-6 py-2 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-110 relative z-10">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md"><img src="assets/images/testimonials/avatar2.webp" alt="Jennifer Walker" class="w-full h-full object-cover"></div>
+                                <div class="text-left">
+                                    <h4 class="font-bold text-slate-900 text-sm">Jennifer Walker</h4>
+                                    <p class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Designer</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar1.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar4.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide w-1/4 px-4">
+                        <div class="flex justify-center items-center gap-8 md:gap-16 mb-8 opacity-70 grayscale">
+                            <h3 class="text-xl font-bold text-[#0064e0]">Meta</h3>
+                            <h3 class="text-xl font-bold text-black">Uber</h3>
+                            <h3 class="text-xl font-bold text-[#81B441]">envato</h3>
+                        </div>
+                        <p class="text-2xl lg:text-3xl font-medium text-slate-700 italic mb-12 text-balance leading-relaxed">
+                            "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+                        </p>
+                        <div class="flex items-center justify-center gap-4 md:gap-12">
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar1.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar2.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="flex items-center gap-4 bg-white px-6 py-2 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-110 relative z-10">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md"><img src="assets/images/testimonials/avatar3.webp" alt="JD Scot" class="w-full h-full object-cover"></div>
+                                <div class="text-left">
+                                    <h4 class="font-bold text-slate-900 text-sm">JD Scot</h4>
+                                    <p class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Designer</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar4.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar1.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="testimonial-slide w-1/4 px-4">
+                        <div class="flex justify-center items-center gap-8 md:gap-16 mb-8 opacity-70 grayscale">
+                            <h3 class="text-xl font-bold text-black">Uber</h3>
+                            <h3 class="text-xl font-bold text-[#81B441]">envato</h3>
+                            <h3 class="text-xl font-bold text-[#E60023]">Pinterest</h3>
+                        </div>
+                        <p class="text-2xl lg:text-3xl font-medium text-slate-700 italic mb-12 text-balance leading-relaxed">
+                            "Dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown."
+                        </p>
+                        <div class="flex items-center justify-center gap-4 md:gap-12">
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar2.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar3.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="flex items-center gap-4 bg-white px-6 py-2 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] scale-110 relative z-10">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md"><img src="assets/images/testimonials/avatar4.webp" alt="Fitt Morgan" class="w-full h-full object-cover"></div>
+                                <div class="text-left">
+                                    <h4 class="font-bold text-slate-900 text-sm">Fitt Morgan</h4>
+                                    <p class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Designer</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden sm:block"><img src="assets/images/testimonials/avatar1.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                            <div class="w-12 h-12 rounded-full overflow-hidden opacity-50 grayscale transition-all duration-300 hidden md:block"><img src="assets/images/testimonials/avatar2.webp" alt="Avatar" class="w-full h-full object-cover"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation -->
+                <div class="flex justify-center items-center gap-3 mt-12 slider-dots">
+                    <button class="w-3 h-3 rounded-full bg-blue-600 transition-all cursor-pointer" data-slide="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-blue-200 transition-all cursor-pointer hover:bg-blue-400" data-slide="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-blue-200 transition-all cursor-pointer hover:bg-blue-400" data-slide="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-blue-200 transition-all cursor-pointer hover:bg-blue-400" data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#020617] pt-20 pb-10 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Column 1 -->
+                <div class="footer-col opacity-0">
+                    <a href="index.html" class="flex items-center mb-6"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-16 w-auto object-contain brightness-0 invert"></a>
+                    <p class="text-sm text-[#94A3B8] mb-8 leading-relaxed">
+                        Your premium technology partner for modern cloud business. Build, scale, secure, and manage your digital operations with Stackly.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(36,99,255,0.5)]">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <!-- Similar icons for FB, IG, LinkedIn omitted for brevity but representable via generic icons -->
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">in</a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">f</a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">COMPANY</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Home</a></li>
+                        <li><a href="about.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>About Us</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Services</a></li>
+                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Blog</a></li>
+                        <li><a href="domain.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Domain</a></li>
+                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]">▸</span>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">EXPLORE</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cloud Hosting</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cloud Analytics</a></li>
+                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Cyber Security</a></li>
+                        <li><a href="login.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Login</a></li>
+                        <li><a href="signup.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>Signup</a></li>
+                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500">▸</span>404 Page</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col opacity-0">
+                    <h4 class="text-white font-bold tracking-wider mb-6">NEWSLETTER</h4>
+                    <p class="text-sm mb-6 leading-relaxed">
+                        Subscribe to receive exclusive cloud insights, technology updates, and Stackly business solutions.
+                    </p>
+                    <form id="newsletter-form" class="relative">
+                        <div class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-full border border-white/10 focus-within:border-blue-500 transition-colors">
+                            <input type="email" placeholder="Email Address" required class="bg-transparent border-none outline-none text-white px-4 py-3 w-full text-sm placeholder-slate-400 focus:ring-0">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-105 shadow-[0_0_15px_rgba(36,99,255,0.4)] mt-2 sm:mt-0">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p id="newsletter-success" class="absolute -bottom-8 left-0 text-sm text-green-400 hidden">Thanks for subscribing!</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-white/10 mb-8">
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#94A3B8]">
+                <p>© 2026 Stackly. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+</body>
+</html>

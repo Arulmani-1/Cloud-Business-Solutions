@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Stackly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Check auth
+        document.addEventListener('DOMContentLoaded', () => {
+            const userStr = localStorage.getItem('currentUser');
+            if (!userStr) { window.location.href = 'login.html'; return; }
+            const user = JSON.parse(userStr);
+            if (user.role !== 'client') { window.location.href = 'login.html'; return; }
+            document.getElementById('user-email-display').textContent = user.email;
+        });
+    </script>
+</head>
+
+<body class="bg-slate-50 antialiased font-sans">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="sidebar-backdrop"
+        class="fixed inset-0 bg-slate-900/50 z-40 hidden lg:hidden transition-opacity opacity-0 pointer-events-none">
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed inset-y-0 left-0 w-64 bg-[#0B1638] text-white shadow-xl z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <div class="py-6 px-6 border-b border-white/10">
+            <a href="index.html" class="flex flex-col items-start gap-1.5">
+                <img src="assets/images/logo.webp" alt="Stackly Logo" class="h-8 w-auto brightness-0 invert mb-1">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-300">Client</span>
+            </a>
+        </div>
+        <nav class="p-4 space-y-2" id="sidebar-nav">
+            <a href="#" data-tab="tab-services"
+                class="tab-link flex items-center gap-3 px-4 py-3 bg-blue-600 rounded-lg text-white font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                    </path>
+                </svg>
+                My Services
+            </a>
+            <a href="#" data-tab="tab-billing"
+                class="tab-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                    </path>
+                </svg>
+                Billing
+            </a>
+            <a href="#" data-tab="tab-support"
+                class="tab-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+                Support
+            </a>
+            <a href="#" data-tab="tab-profile"
+                class="tab-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                My Profile
+            </a>
+            <a href="#" data-tab="tab-api"
+                class="tab-link flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                API Keys
+            </a>
+        </nav>
+        <div class="absolute bottom-0 left-0 w-full p-4">
+            <button onclick="localStorage.removeItem('currentUser'); window.location.href='login.html'"
+                class="w-full flex items-center justify-center gap-2 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
+                </svg>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="ml-0 lg:ml-64 flex flex-col min-h-screen transition-all duration-300">
+        <!-- Top Navbar -->
+        <header
+            class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 lg:px-8 fixed top-0 right-0 left-0 lg:left-64 z-30 transition-all duration-300">
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 -ml-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg focus:outline-none transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <h2 id="dashboard-title" class="text-xl font-bold text-slate-800">My Services</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <span id="user-email-display"
+                    class="text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full"></span>
+                <div
+                    class="w-8 h-8 rounded-full bg-blue-100 hidden sm:flex items-center justify-center text-blue-600 font-bold shrink-0">
+                    C
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-4 lg:p-8 mt-16 relative">
+
+            <!-- Tab 1: My Services -->
+            <div id="tab-services" class="tab-content block">
+                <div class="flex justify-between items-center mb-6" data-aos="fade-in">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">Welcome back Client</h2>
+                        <p class="text-slate-500 text-sm">Manage and monitor your active deployments</p>
+                    </div>
+                    <button
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                        Deploy New Service
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up">
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Active Instances</h3>
+                            <p class="text-3xl font-bold text-slate-800">3 <span
+                                    class="text-sm text-green-500 font-medium">+1 new</span></p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Average Uptime</h3>
+                            <p class="text-3xl font-bold text-slate-800">99.9%</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Storage Used</h3>
+                            <p class="text-3xl font-bold text-slate-800">1.2<span
+                                    class="text-sm font-medium text-slate-500">TB</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800">Running Instances</h3>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Search resources..."
+                                class="px-3 py-1.5 border border-slate-200 rounded-lg text-sm outline-none focus:border-blue-500 w-64">
+                        </div>
+                    </div>
+                    <div class="p-0 overflow-x-auto">
+                        <table class="w-full text-left border-collapse whitespace-nowrap">
+                            <thead>
+                                <tr
+                                    class="text-xs text-slate-400 border-b border-slate-100 uppercase tracking-wider bg-white">
+                                    <th class="px-6 py-4 font-semibold">Instance Name</th>
+                                    <th class="px-6 py-4 font-semibold">Status</th>
+                                    <th class="px-6 py-4 font-semibold">Type</th>
+                                    <th class="px-6 py-4 font-semibold">Region</th>
+                                    <th class="px-6 py-4 font-semibold">IP Address</th>
+                                    <th class="px-6 py-4 font-semibold text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-semibold text-slate-700 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        Prod-DB-Cluster
+                                    </td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full flex items-center w-fit gap-1.5"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-green-600"></span>Running</span></td>
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Memory-Optimized (64GB)</td>
+                                    <td class="px-6 py-4 text-slate-500">US-East-1 (Virginia)</td>
+                                    <td class="px-6 py-4 font-mono text-slate-600 text-xs">192.168.1.104</td>
+                                    <td class="px-6 py-4 text-right space-x-2">
+                                        <button
+                                            class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Manage</button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-semibold text-slate-700 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        Web-Server-01
+                                    </td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full flex items-center w-fit gap-1.5"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-green-600"></span>Running</span></td>
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Compute-Optimized (8 vCPU)</td>
+                                    <td class="px-6 py-4 text-slate-500">US-West-2 (Oregon)</td>
+                                    <td class="px-6 py-4 font-mono text-slate-600 text-xs">10.0.4.22</td>
+                                    <td class="px-6 py-4 text-right space-x-2">
+                                        <button
+                                            class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Manage</button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 font-semibold text-slate-700 flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 rounded bg-purple-100 text-purple-600 flex items-center justify-center">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        Backup-Storage
+                                    </td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full flex items-center w-fit gap-1.5"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-yellow-600 animate-pulse"></span>Syncing</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Object Storage (5TB)</td>
+                                    <td class="px-6 py-4 text-slate-500">EU-Central-1 (Frankfurt)</td>
+                                    <td class="px-6 py-4 font-mono text-slate-600 text-xs">-</td>
+                                    <td class="px-6 py-4 text-right space-x-2">
+                                        <button
+                                            class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Manage</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Billing -->
+            <div id="tab-billing" class="tab-content hidden animate-[fadeIn_0.3s_ease-out]">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <!-- Current Usage Summary -->
+                    <div
+                        class="lg:col-span-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 p-8 flex flex-col justify-center">
+                        <div class="flex justify-between items-start mb-8">
+                            <div>
+                                <h3 class="text-slate-400 font-bold uppercase tracking-wider text-xs mb-1">Current
+                                    Billing Cycle (Oct 1 - Oct 31)</h3>
+                                <p class="text-4xl font-bold text-slate-800">$184.50</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-blue-50 text-blue-600 font-bold rounded-lg text-sm border border-blue-100">Projected:
+                                $210.00</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                    <span class="text-slate-600">Compute Resources</span>
+                                    <span class="text-slate-800">$120.00</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                    <div class="bg-blue-500 h-2.5 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                    <span class="text-slate-600">Storage Services</span>
+                                    <span class="text-slate-800">$45.00</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                    <div class="bg-purple-500 h-2.5 rounded-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                    <span class="text-slate-600">Network / Bandwidth</span>
+                                    <span class="text-slate-800">$19.50</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                    <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 10%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div
+                        class="lg:col-span-1 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 p-6 relative overflow-hidden flex flex-col">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-6 relative z-10">Payment Method</h3>
+
+                        <div class="bg-slate-900 rounded-xl p-5 text-white mb-6 shadow-lg relative z-10 flex-1">
+                            <div class="flex justify-between items-center mb-8">
+                                <svg class="w-10 h-10 opacity-80" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M2.993 17.51c0 .484.341.876.76 1.056l7.733 3.32a1.3 1.3 0 001.026 0l7.734-3.32c.42-.18.761-.572.761-1.056V6.49c0-.484-.341-.876-.76-1.056l-7.733-3.32a1.3 1.3 0 00-1.026 0L3.753 5.434c-.42.18-.761.572-.761 1.056v11.02zM12 4.417l6.638 2.85-2.906 1.25L9.09 5.666 12 4.417zm-1.07 1.765l6.638 2.85-3.045 1.31-6.638-2.85 3.045-1.31zM4.195 8.136l6.638 2.85v7.24l-6.638-2.85v-7.24zm8.778 10.09V10.985l6.638-2.85v7.24l-6.638 2.85z" />
+                                </svg>
+                                <span class="font-bold text-sm tracking-widest opacity-80 italic">VISA</span>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <p class="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">Card Number
+                                    </p>
+                                    <p class="font-mono text-base tracking-widest text-slate-100">•••• •••• •••• 4242
+                                    </p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[10px] text-slate-400 mb-0.5 uppercase tracking-wider">Expires</p>
+                                    <p class="font-mono text-sm text-slate-100">12/26</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-2.5 rounded-lg border border-slate-200 text-slate-600 font-bold hover:bg-slate-50 transition-colors text-sm relative z-10 shadow-sm mt-auto">Update
+                            Payment Method</button>
+                    </div>
+                </div>
+
+                <!-- Invoices -->
+                <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800">Billing History</h3>
+                        <button
+                            class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-800 transition-colors flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download All
+                        </button>
+                    </div>
+                    <div class="p-0 overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr
+                                    class="text-xs text-slate-400 border-b border-slate-100 uppercase tracking-wider bg-white">
+                                    <th class="px-6 py-4 font-semibold">Date</th>
+                                    <th class="px-6 py-4 font-semibold">Invoice ID</th>
+                                    <th class="px-6 py-4 font-semibold">Amount</th>
+                                    <th class="px-6 py-4 font-semibold">Status</th>
+                                    <th class="px-6 py-4 font-semibold text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Oct 01, 2023</td>
+                                    <td class="px-6 py-4 font-semibold text-blue-600 cursor-pointer hover:underline">
+                                        #INV-2023-1042</td>
+                                    <td class="px-6 py-4 font-bold text-slate-700">$124.00</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Paid</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-slate-400 hover:text-blue-600 transition-colors"><svg
+                                                class="w-5 h-5 inline" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                                                </path>
+                                            </svg></button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-50 hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Sep 01, 2023</td>
+                                    <td class="px-6 py-4 font-semibold text-blue-600 cursor-pointer hover:underline">
+                                        #INV-2023-0931</td>
+                                    <td class="px-6 py-4 font-bold text-slate-700">$124.00</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Paid</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-slate-400 hover:text-blue-600 transition-colors"><svg
+                                                class="w-5 h-5 inline" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                                                </path>
+                                            </svg></button>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-6 py-4 text-slate-500 font-medium">Aug 01, 2023</td>
+                                    <td class="px-6 py-4 font-semibold text-blue-600 cursor-pointer hover:underline">
+                                        #INV-2023-0815</td>
+                                    <td class="px-6 py-4 font-bold text-slate-700">$110.00</td>
+                                    <td class="px-6 py-4"><span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Paid</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <button class="text-slate-400 hover:text-blue-600 transition-colors"><svg
+                                                class="w-5 h-5 inline" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                                                </path>
+                                            </svg></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Support -->
+            <div id="tab-support" class="tab-content hidden animate-[fadeIn_0.3s_ease-out]">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Create Ticket Form -->
+                    <div class="lg:col-span-1 bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 h-fit">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">Create New Ticket</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-1">Subject</label>
+                                <input type="text" placeholder="Brief summary of issue"
+                                    class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-1">Category</label>
+                                <select
+                                    class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm text-slate-600 bg-white">
+                                    <option>Billing Issue</option>
+                                    <option>Technical Support</option>
+                                    <option>Account Management</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-1">Priority</label>
+                                <select
+                                    class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm text-slate-600 bg-white">
+                                    <option>Low</option>
+                                    <option selected>Normal</option>
+                                    <option>High</option>
+                                    <option>Critical</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-600 mb-1">Message</label>
+                                <textarea rows="4" placeholder="Describe your issue in detail..."
+                                    class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm resize-none"></textarea>
+                            </div>
+                            <button type="button"
+                                class="w-full bg-blue-600 text-white px-4 py-2.5 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm">Submit
+                                Ticket</button>
+                        </form>
+                    </div>
+
+                    <!-- Recent Tickets -->
+                    <div
+                        class="lg:col-span-2 bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden h-fit">
+                        <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <h3 class="font-bold text-slate-800">Recent Support Tickets</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <!-- Ticket Item -->
+                                <div
+                                    class="flex items-center justify-between p-4 border border-slate-100 rounded-lg hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-pointer group">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0">
+                                            #42
+                                        </div>
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Server instance #4492 is unresponsive</h4>
+                                            <p class="text-xs text-slate-500 mt-1">Technical Support • Created Oct 24,
+                                                2023</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <span
+                                            class="px-2.5 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">In
+                                            Progress</span>
+                                        <span class="text-xs text-slate-400 font-medium">Updated 2h ago</span>
+                                    </div>
+                                </div>
+                                <!-- Ticket Item -->
+                                <div
+                                    class="flex items-center justify-between p-4 border border-slate-100 rounded-lg hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-pointer group">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">
+                                            #38
+                                        </div>
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                Question about October billing invoice</h4>
+                                            <p class="text-xs text-slate-500 mt-1">Billing Issue • Created Oct 12, 2023
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Resolved</span>
+                                        <span class="text-xs text-slate-400 font-medium">Updated Oct 14</span>
+                                    </div>
+                                </div>
+                                <!-- Ticket Item -->
+                                <div
+                                    class="flex items-center justify-between p-4 border border-slate-100 rounded-lg hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-pointer group">
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold text-sm shrink-0">
+                                            #21
+                                        </div>
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                How to upgrade my storage limit?</h4>
+                                            <p class="text-xs text-slate-500 mt-1">Account Management • Created Sep 05,
+                                                2023</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-end gap-2">
+                                        <span
+                                            class="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Resolved</span>
+                                        <span class="text-xs text-slate-400 font-medium">Updated Sep 06</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Profile -->
+            <div id="tab-profile" class="tab-content hidden animate-[fadeIn_0.3s_ease-out]">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- Profile Info -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                            <h3 class="text-lg font-bold text-slate-800 mb-6">Personal Information</h3>
+
+                            <div class="flex items-center gap-6 mb-8 pb-8 border-b border-slate-100">
+                                <div
+                                    class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-3xl shadow-inner relative group cursor-pointer overflow-hidden">
+                                    C
+                                    <div
+                                        class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">Client User</h4>
+                                    <p class="text-slate-500 text-sm mb-3">Update your photo and personal details.</p>
+                                    <div class="flex gap-3">
+                                        <button
+                                            class="px-4 py-1.5 bg-blue-50 text-blue-600 font-bold rounded-lg text-sm border border-blue-100 hover:bg-blue-100 transition-colors">Upload
+                                            New</button>
+                                        <button
+                                            class="px-4 py-1.5 bg-slate-50 text-slate-600 font-bold rounded-lg text-sm border border-slate-200 hover:bg-slate-100 transition-colors">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="space-y-5">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-600 mb-1">First
+                                            Name</label>
+                                        <input type="text" value="Client"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm text-slate-800 font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-600 mb-1">Last Name</label>
+                                        <input type="text" value="User"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm text-slate-800 font-medium">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-600 mb-1">Email
+                                            Address</label>
+                                        <input type="email" value="client@example.com" disabled
+                                            class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 outline-none text-sm font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-600 mb-1">Phone
+                                            Number</label>
+                                        <input type="tel" placeholder="+1 (555) 000-0000"
+                                            class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm text-slate-800 font-medium">
+                                    </div>
+                                </div>
+                                <div class="pt-4">
+                                    <button type="button"
+                                        class="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm">Save
+                                        Changes</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                            <h3 class="text-lg font-bold text-slate-800 mb-6">Security & Password</h3>
+                            <form class="space-y-5 max-w-md">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600 mb-1">Current
+                                        Password</label>
+                                    <input type="password"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600 mb-1">New Password</label>
+                                    <input type="password"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-600 mb-1">Confirm New
+                                        Password</label>
+                                    <input type="password"
+                                        class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:border-blue-500 outline-none text-sm">
+                                </div>
+                                <div class="pt-2">
+                                    <button type="button"
+                                        class="bg-slate-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-sm">Update
+                                        Password</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Preferences -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                            <h3 class="text-base font-bold text-slate-800 mb-5">Notification Preferences</h3>
+                            <div class="space-y-5">
+                                <label class="flex items-start gap-3 cursor-pointer group">
+                                    <div class="relative flex items-center pt-0.5">
+                                        <input type="checkbox" checked
+                                            class="w-4.5 h-4.5 text-blue-600 rounded border-slate-300 focus:ring-blue-500 transition-all">
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
+                                            Billing Alerts</p>
+                                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Receive emails for
+                                            invoices and payments.</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-start gap-3 cursor-pointer group">
+                                    <div class="relative flex items-center pt-0.5">
+                                        <input type="checkbox" checked
+                                            class="w-4.5 h-4.5 text-blue-600 rounded border-slate-300 focus:ring-blue-500 transition-all">
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
+                                            System Updates</p>
+                                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Alerts about scheduled
+                                            maintenance and downtimes.</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-start gap-3 cursor-pointer group">
+                                    <div class="relative flex items-center pt-0.5">
+                                        <input type="checkbox"
+                                            class="w-4.5 h-4.5 text-blue-600 rounded border-slate-300 focus:ring-blue-500 transition-all">
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">
+                                            Marketing & News</p>
+                                        <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">Receive promotional
+                                            offers and newsletters.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 p-6 rounded-xl border border-red-100 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-16 h-16 bg-red-100 rounded-full blur-2xl -mr-5 -mt-5">
+                            </div>
+                            <h3 class="text-base font-bold text-red-800 mb-2 relative z-10">Danger Zone</h3>
+                            <p class="text-xs text-red-700/80 mb-5 leading-relaxed relative z-10">Permanently delete
+                                your account and all associated cloud instances and data. This action cannot be undone.
+                            </p>
+                            <button
+                                class="w-full py-2.5 bg-white text-red-600 font-bold border border-red-200 rounded-lg hover:bg-red-600 hover:text-white transition-colors text-sm shadow-sm relative z-10">Delete
+                                Account</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab 5: API Keys -->
+            <div id="tab-api" class="tab-content hidden animate-[fadeIn_0.3s_ease-out]">
+                <div class="bg-white rounded-xl border border-slate-100 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800">Active API Keys</h3>
+                        <button
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">Generate
+                            New Key</button>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Production Key</h4>
+                                <p class="text-sm text-slate-500">Created on Oct 15, 2023</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <code
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded text-sm tracking-widest">sk_live_***********89x1</code>
+                                <button class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Copy</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Development Key</h4>
+                                <p class="text-sm text-slate-500">Created on Oct 15, 2023</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <code
+                                    class="bg-slate-100 text-slate-600 px-3 py-1 rounded text-sm tracking-widest">sk_test_***********3a4f</code>
+                                <button class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true });
+
+        // Tab Switching Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-link');
+            const contents = document.querySelectorAll('.tab-content');
+            const pageTitle = document.getElementById('dashboard-title');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Remove active styling from all tabs
+                    tabs.forEach(t => {
+                        t.classList.remove('bg-blue-600', 'text-white');
+                        t.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-white/5');
+                    });
+
+                    // Hide all contents
+                    contents.forEach(c => c.classList.add('hidden'));
+
+                    // Add active styling to clicked tab
+                    tab.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-white/5');
+                    tab.classList.add('bg-blue-600', 'text-white');
+
+                    // Show target content
+                    const targetId = tab.getAttribute('data-tab');
+                    document.getElementById(targetId).classList.remove('hidden');
+
+                    // Update title
+                    pageTitle.textContent = tab.textContent.trim();
+
+                    // Close sidebar on mobile
+                    if (window.innerWidth < 1024) {
+                        toggleSidebar(false);
+                    }
+                });
+            });
+
+            // Mobile Sidebar Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+
+            function toggleSidebar(show) {
+                if (show) {
+                    sidebar.classList.remove('-translate-x-full');
+                    sidebarBackdrop.classList.remove('hidden', 'pointer-events-none');
+                    setTimeout(() => sidebarBackdrop.classList.remove('opacity-0'), 10);
+                    document.documentElement.classList.add('overflow-hidden');
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarBackdrop.classList.add('opacity-0', 'pointer-events-none');
+                    setTimeout(() => sidebarBackdrop.classList.add('hidden'), 300);
+                    document.documentElement.classList.remove('overflow-hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => toggleSidebar(true));
+            }
+            if (sidebarBackdrop) {
+                sidebarBackdrop.addEventListener('click', () => toggleSidebar(false));
+            }
+        });
+    </script>
+</body>
+
+</html>
