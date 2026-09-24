@@ -62,5 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     setupForm('signup-form', 'signup-success');
-    setupForm('newsletter-form', 'newsletter-success');
+    
+    // Redirect to 404 page after newsletter subscription
+    setupForm('newsletter-form', 'newsletter-success', (form) => {
+        form.reset();
+        setTimeout(() => {
+            window.location.href = '404.html';
+        }, 1500); // Wait 1.5s so user can see the success message
+    });
 });
