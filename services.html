@@ -857,7 +857,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=4"></script>
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
@@ -922,6 +922,39 @@
                 });
             });
         });
+    </script>
+    
+    <!-- Bulletproof Inline 404 Redirects for this page -->
+    <script>
+        document.body.addEventListener('click', function(e) {
+            // 1. Check if clicking anywhere in the call section
+            let phoneContainer = e.target.closest('.flex.items-center.gap-4');
+            if (phoneContainer && phoneContainer.textContent.includes('Call:')) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.href = '404.html';
+                return;
+            }
+            
+            // 2. Check all anchors and buttons
+            let target = e.target.closest('a, button, [class*="bg-[#7315e5]"]');
+            if (!target) return;
+            
+            let text = target.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+            let href = target.getAttribute('href') || '';
+            
+            let keywords = ['read more', 'view more', 'get started', 'explore the technology'];
+            let isKeyword = keywords.some(k => text === k || text.includes(k));
+            let isPhone = href.startsWith('tel:');
+            let isPurpleSocial = target.closest('.bg-\\[\\#7315e5\\]') || target.classList.contains('bg-[#7315e5]');
+            
+            if (isKeyword || isPhone || isPurpleSocial) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                window.location.href = '404.html';
+            }
+        }, true); // Capture phase
     </script>
 </body>
 </html>

@@ -4,22 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add page transition overlay
     const overlay = document.createElement('div');
     overlay.className = 'page-transition-overlay';
-    
+
     // Add logo
     const logo = document.createElement('img');
     logo.src = 'assets/images/logo.webp';
     logo.alt = 'Loading...';
     logo.className = 'loader-logo';
-    
+
     // Add futuristic bar container
     const barContainer = document.createElement('div');
     barContainer.className = 'loader-bar-container';
-    
+
     // Add bar
     const bar = document.createElement('div');
     bar.className = 'loader-bar';
     barContainer.appendChild(bar);
-    
+
     overlay.appendChild(logo);
     overlay.appendChild(barContainer);
     document.body.appendChild(overlay);
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     t.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
                     t.classList.add('bg-slate-50', 'text-slate-700');
                 });
-                
+
                 // 2. Add active state to clicked tab
                 tab.classList.remove('bg-slate-50', 'text-slate-700');
                 tab.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
@@ -130,16 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardWidth = blogSlider.children[0].offsetWidth;
             const gap = 32; // gap-8 (2rem = 32px)
             const maxScrollLeft = blogSlider.scrollWidth - blogSlider.clientWidth;
-            
+
             if (blogSlider.scrollLeft >= maxScrollLeft - 10) {
                 blogSlider.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
                 blogSlider.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
             }
         };
-        
+
         let blogInterval = setInterval(slideBlog, 3500);
-        
+
         blogSlider.addEventListener('mouseenter', () => clearInterval(blogInterval));
         blogSlider.addEventListener('mouseleave', () => {
             blogInterval = setInterval(slideBlog, 3500);
@@ -153,10 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = item.querySelector('.faq-btn');
             const content = item.querySelector('.faq-content');
             const icon = item.querySelector('.faq-icon');
-            
+
             btn.addEventListener('click', () => {
                 const isOpen = !content.classList.contains('hidden');
-                
+
                 // Close all
                 faqItems.forEach(otherItem => {
                     otherItem.querySelector('.faq-content').classList.add('hidden');
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     otherIcon.classList.add('bg-white', 'text-blue-600');
                     otherIcon.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>`;
                 });
-                
+
                 // Toggle current
                 if (!isOpen) {
                     content.classList.remove('hidden');
@@ -175,51 +175,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        
+
         // Open the first one by default
         faqItems[0].querySelector('.faq-btn').click();
     }
 
-    // Global Action Button & Social Icon Redirects
+    // Global Action Button & Social Icon Redirects (Run in capture phase to intercept before page transition script)
     document.body.addEventListener('click', (e) => {
         const target = e.target.closest('a, button');
         if (!target) return;
-        
+
         const text = target.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-        
+        const href = target.getAttribute('href');
+
         // List of all action buttons across the site
         const targetKeywords = [
-            'explore solutions', 'get started', 'get it now', 
-            'learn more', 'read more', 'purchase now', 
+            'explore solutions', 'get started', 'get it now',
+            'learn more', 'read more', 'purchase now',
             'signup free', 'view more', 'explore the technology',
-            'deploy new service', 'manage', 'update payment method', 
-            'download all', 'submit ticket', 'upload new', 'remove', 
+            'deploy new service', 'manage', 'update payment method',
+            'download all', 'submit ticket', 'upload new', 'remove',
             'save changes', 'update password', 'delete account',
-            'generate new key', 'copy', 'view all', 'add user', 
-            'report', 'export', 'view ticket', 'save global config', 
+            'generate new key', 'copy', 'view all', 'add user',
+            'report', 'export', 'view ticket', 'save global config',
             'update smtp', 'clear system cache', 'force database restart'
         ];
-        
+
         // Check for text match
         let isMatch = targetKeywords.some(kw => text === kw || text.includes(kw));
-        
+
         // Check for social icons
-        let isSocial = target.classList.contains('social-icon') || 
-                       target.classList.contains('social-share') || 
-                       target.closest('.social-links') || 
-                       target.closest('.floating-social') ||
-                       target.closest('.sticky-social') ||
-                       target.classList.contains('bg-white/10') && target.querySelector('i') || // common social icons in footer
-                       text === 'f' || text === 'x' || text === 'in' || text === 'p' ||
-                       target.querySelector('.fa-facebook, .fa-twitter, .fa-instagram, .fa-linkedin');
-        
+        let isSocial = target.classList.contains('social-icon') ||
+            target.classList.contains('social-share') ||
+            target.closest('.social-links') ||
+            target.closest('.floating-social') ||
+            target.closest('.sticky-social') ||
+            target.classList.contains('bg-[#7315e5]') || // Purple floating sidebar
+            target.closest('.bg-[#7315e5]') ||
+            target.classList.contains('bg-white/10') && target.querySelector('i') || // common social icons in footer
+            text === 'f' || text === 'x' || text === 'in' || text === 'p' ||
+            target.querySelector('.fa-facebook, .fa-twitter, .fa-instagram, .fa-linkedin');
+
         // Check for icon buttons (Edit, Delete, Download in tables)
         let isTableIcon = target.closest('td') && target.querySelector('svg');
-        
-        if ((isMatch && text.length < 50) || isSocial || isTableIcon) {
+
+        // Check for phone number links
+        let isPhoneLink = href && href.startsWith('tel:');
+
+        if ((isMatch && text.length < 50) || isSocial || isTableIcon || isPhoneLink) {
             e.preventDefault();
-            e.stopPropagation();
+            e.stopPropagation(); // Stop propagation in capture phase to prevent other listeners
             window.location.href = '404.html';
         }
-    });
+    }, true); // true = Use Capture Phase
 });

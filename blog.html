@@ -501,7 +501,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=4"></script>
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
@@ -566,6 +566,88 @@
                 });
             });
         });
+    </script>
+    
+    <!-- Bulletproof Inline 404 Redirects for Blog Page -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Add required to comment form and handle submit
+            const commentForm = document.querySelector('form.space-y-6');
+            if (commentForm) {
+                commentForm.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(el => {
+                    el.required = true;
+                });
+                commentForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                });
+            }
+
+            // 2. Add required to newsletter form and handle submit
+            const emailInput = document.querySelector('input[placeholder="Email Address"]');
+            const newsletterForm = emailInput ? emailInput.closest('form') : null;
+            if (newsletterForm) {
+                if (emailInput) emailInput.required = true;
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                });
+            }
+            
+            // 3. Add required to search form and handle submit
+            const searchInput = document.querySelector('input[placeholder="Search ..."]');
+            const searchForm = searchInput ? searchInput.closest('form') : null;
+            if (searchForm) {
+                if (searchInput) searchInput.required = true;
+                searchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                });
+            }
+        });
+
+        // Global click interceptor for blog page elements
+        document.body.addEventListener('click', (e) => {
+            // Let the form submit buttons pass through so HTML5 validation works
+            if (e.target.closest('button[type="submit"]') || e.target.closest('form')) {
+                let form = e.target.closest('form');
+                if (form && (form.classList.contains('space-y-6') || form.querySelector('input[placeholder="Email Address"]') || form.querySelector('input[placeholder="Search ..."]'))) {
+                    return; // Let the submit event listener handle this
+                }
+            }
+
+            let target = e.target.closest('a, button');
+            if (!target) return;
+
+            let text = target.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+            
+            // Check container for headers
+            let panel = target.closest('.rounded-2xl');
+            let panelTitle = panel && panel.querySelector('h4') ? panel.querySelector('h4').textContent : '';
+            
+            let isRecentPost = panelTitle.includes('Recent Post');
+            let isCategory = panelTitle.includes('Categories');
+            let isPopularTag = panelTitle.includes('Popular Tags');
+            
+            // Tags inside the article
+            let isArticleTag = target.parentElement && target.parentElement.previousElementSibling && target.parentElement.previousElementSibling.textContent.includes('Tags:');
+            
+            let isReply = text === 'reply';
+            
+            // Social icons (both circular and text-based)
+            let isSocialText = ['fb', 'tw', 'in', 'pi', 'f', 'x', 'p'].includes(text);
+            let isSocialIcon = target.querySelector('i') || target.querySelector('svg') || target.classList.contains('rounded-full');
+            
+            // Sometimes social buttons don't have text or we missed them, so if they're in a social container:
+            let isSocialContainer = target.closest('.flex.items-center.gap-4') || target.closest('.social-links');
+
+            if (isRecentPost || isCategory || isPopularTag || isArticleTag || isReply || isSocialText || isSocialContainer) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                window.location.href = '404.html';
+            }
+        }, true);
     </script>
 </body>
 </html>
