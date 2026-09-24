@@ -856,6 +856,35 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (!button) return;
+                
+                const text = button.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+                const targetKeywords = [
+                    'deploy new service', 'manage', 'update payment method', 
+                    'download all', 'submit ticket', 'upload new', 'remove', 
+                    'save changes', 'update password', 'delete account',
+                    'generate new key', 'copy'
+                ];
+                
+                // Check if button text matches any keyword
+                if (targetKeywords.some(kw => text.includes(kw))) {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                    return;
+                }
+                
+                // For icon buttons (Download, Edit, etc.) in tables
+                if (button.closest('td') && button.querySelector('svg')) {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

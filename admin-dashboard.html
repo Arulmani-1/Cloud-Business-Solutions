@@ -1168,6 +1168,34 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (!button) return;
+                
+                const text = button.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+                const targetKeywords = [
+                    'view all', 'add user', 'report', 'export', 
+                    'view ticket', 'save global config', 'update smtp', 
+                    'clear system cache', 'force database restart'
+                ];
+                
+                // Check if button text matches any keyword
+                if (targetKeywords.some(kw => text.includes(kw))) {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                    return;
+                }
+                
+                // For icon buttons (Edit, Delete, etc.) in tables
+                if (button.closest('td') && button.querySelector('svg')) {
+                    e.preventDefault();
+                    window.location.href = '404.html';
+                }
+            });
+        });
+    </script>
 </body>
 
 
