@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
     <!-- Navbar -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-transparent">
@@ -15,30 +17,41 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="flex items-center"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-12 w-auto object-contain"></a>
+                    <a href="index.html" class="flex items-center"><img src="assets/images/logo.webp" alt="Stackly Logo"
+                            class="h-12 w-auto object-contain"></a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 active text-blue-600">HOME</a>
-                    <a href="about.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">ABOUT US</a>
-                    <a href="services.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">SERVICES</a>
-                    <a href="blog.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">BLOG</a>
-                    <a href="domain.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">DOMAIN</a>
-                    <a href="contact.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">CONTACT</a>
+                    <a href="index.html"
+                        class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 active text-blue-600">HOME</a>
+                    <a href="about.html" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">ABOUT
+                        US</a>
+                    <a href="services.html"
+                        class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">SERVICES</a>
+                    <a href="blog.html"
+                        class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">BLOG</a>
+                    <a href="domain.html"
+                        class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">DOMAIN</a>
+                    <a href="contact.html"
+                        class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600">CONTACT</a>
                 </div>
 
                 <!-- Right Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">LOGIN</a>
-                    <a href="signup.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">SIGN UP</a>
+                    <a href="login.html"
+                        class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">LOGIN</a>
+                    <a href="signup.html"
+                        class="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">SIGN
+                        UP</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-700 hover:text-blue-600 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
@@ -46,24 +59,35 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full h-screen overflow-y-auto pb-24 bg-white shadow-xl border-t border-slate-100">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full h-screen overflow-y-auto pb-24 bg-white shadow-xl border-t border-slate-100">
             <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">About Us</a>
-                <a href="services.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Services</a>
-                <a href="blog.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Blog</a>
-                <a href="domain.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Domain</a>
-                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Contact</a>
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-blue-600 bg-blue-50 rounded-md">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">About
+                    Us</a>
+                <a href="services.html"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Services</a>
+                <a href="blog.html"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Blog</a>
+                <a href="domain.html"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Domain</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md">Contact</a>
                 <div class="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2">
-                    <a href="login.html" class="block w-full text-center px-4 py-2 text-base font-medium text-slate-700 border border-slate-200 rounded-md">Login</a>
-                    <a href="signup.html" class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md">Sign Up</a>
+                    <a href="login.html"
+                        class="block w-full text-center px-4 py-2 text-base font-medium text-slate-700 border border-slate-200 rounded-md">Login</a>
+                    <a href="signup.html"
+                        class="block w-full text-center px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-md">Sign
+                        Up</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    
-    
+
+
     <section class="pt-40 pb-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
             <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">Blog</h1>
@@ -72,144 +96,125 @@
     </section>
     <section class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_350px] gap-12">
-            
+
             <!-- Main Content -->
             <div class="blog-content">
-                <img src="assets/images/blog/object_storage.webp" alt="Introducing Object Storage" class="w-full h-auto object-cover mb-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]" data-aos="fade-in">
-                <span class="bg-blue-600 text-white text-[10px] font-bold px-4 py-2 uppercase tracking-widest shadow-md rounded-sm mb-6 inline-block">Cloud & Data</span>
-                
-                <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#050817] to-blue-600 mb-8 leading-tight tracking-tight">Introducing Object Storage</h1>
-                <p class="text-[#64748B] mb-6 leading-relaxed">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
-                <p class="text-[#64748B] mb-12 leading-relaxed">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.</p>
+                <img src="assets/images/blog/object_storage.webp" alt="Introducing Object Storage"
+                    class="w-full h-auto object-cover mb-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+                    data-aos="fade-in">
+                <span
+                    class="bg-blue-600 text-white text-[10px] font-bold px-4 py-2 uppercase tracking-widest shadow-md rounded-sm mb-6 inline-block">Cloud
+                    & Data</span>
 
-                <blockquote class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-10 md:p-14 text-center rounded-2xl mb-12 shadow-[0_20px_50px_rgba(15,23,42,0.3)] transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden" data-aos="fade-up">
-                    <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">" Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam "</p>
-                    <footer class="bg-[#020617] pt-20 pb-10 text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-                
-                <!-- Column 1 -->
-                <div class="footer-col opacity-0">
-                    <a href="index.html" class="flex items-center mb-6"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-16 w-auto object-contain brightness-0 invert"></a>
-                    <p class="text-sm text-[#94A3B8] mb-8 leading-relaxed">
-                        Your premium technology partner for modern cloud business. Build, scale, secure, and manage your digital operations with Stackly.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(36,99,255,0.5)]">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-                        </a>
-                        <!-- Similar icons for FB, IG, LinkedIn omitted for brevity but representable via generic icons -->
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">in</a>
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">f</a>
-                    </div>
-                </div>
+                <h1
+                    class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#050817] to-blue-600 mb-8 leading-tight tracking-tight">
+                    Introducing Object Storage</h1>
+                <p class="text-[#64748B] mb-6 leading-relaxed">On the other hand, we denounce with righteous indignation
+                    and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
+                    blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal
+                    blame belongs to those who fail in their duty through weakness of will, which is the same as saying
+                    through shrinking from toil and pain.</p>
+                <p class="text-[#64748B] mb-12 leading-relaxed">These cases are perfectly simple and easy to
+                    distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our
+                    being able to do what we like best, every pleasure is to be welcomed and every pain avoided.</p>
 
-                <!-- Column 2 -->
-                <div class="footer-col opacity-0">
-                    <h4 class="text-white font-bold tracking-wider mb-6">COMPANY</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Home</a></li>
-                        <li><a href="about.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>About Us</a></li>
-                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Services</a></li>
-                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Blog</a></li>
-                        <li><a href="domain.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Domain</a></li>
-                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="footer-col opacity-0">
-                    <h4 class="text-white font-bold tracking-wider mb-6">EXPLORE</h4>
-                    <ul class="space-y-3">
-                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cloud Hosting</a></li>
-                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cloud Analytics</a></li>
-                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cyber Security</a></li>
-                        <li><a href="login.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Login</a></li>
-                        <li><a href="signup.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Signup</a></li>
-                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>404 Page</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4 -->
-                <div class="footer-col opacity-0">
-                    <h4 class="text-white font-bold tracking-wider mb-6">NEWSLETTER</h4>
-                    <p class="text-sm mb-6 leading-relaxed">
-                        Subscribe to receive exclusive cloud insights, technology updates, and Stackly business solutions.
-                    </p>
-                    <form id="newsletter-form" class="relative">
-                        <div class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-full border border-white/10 focus-within:border-blue-500 transition-colors">
-                            <input type="email" placeholder="Email Address" required class="bg-transparent border-none outline-none text-white px-4 py-3 w-full text-sm placeholder-slate-400 focus:ring-0">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-105 shadow-[0_0_15px_rgba(36,99,255,0.4)] mt-2 sm:mt-0">
-                                Subscribe
-                            </button>
-                        </div>
-                        <p id="newsletter-success" class="absolute -bottom-8 left-0 text-sm text-green-400 hidden">Thanks for subscribing!</p>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <hr class="border-white/10 mb-8">
-
-            <!-- Bottom Bar -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#94A3B8]">
-                <p>© 2026 Stackly. All Rights Reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="404.html" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="404.html" class="hover:text-white transition-colors">Terms & Conditions</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+                <blockquote
+                    class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white p-10 md:p-14 text-center rounded-2xl mb-12 shadow-[0_20px_50px_rgba(15,23,42,0.3)] transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                    data-aos="fade-up">
+                    <p class="text-xl md:text-2xl font-light italic mb-8 leading-relaxed">" Sed ut perspiciatis unde
+                        omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam "</p>
                 </blockquote>
 
-                <p class="text-[#64748B] mb-12 leading-relaxed">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. <strong>No one rejects, dislikes or avoids pleasure itself</strong> because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain</p>
+                <p class="text-[#64748B] mb-12 leading-relaxed">But I must explain to you how all this mistaken idea of
+                    denouncing pleasure and praising pain was born and I will give you a complete account of the system,
+                    and expound the actual teachings of the great explorer of the truth, the master-builder of human
+                    happiness. <strong>No one rejects, dislikes or avoids pleasure itself</strong> because it is
+                    pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences
+                    that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain
+                    of itself, because it is pain</p>
 
-                <img src="assets/images/blog/protect_data.webp" alt="Full Storage" class="w-full h-auto object-cover mb-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]" data-aos="fade-in">
+                <img src="assets/images/blog/protect_data.webp" alt="Full Storage"
+                    class="w-full h-auto object-cover mb-12 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+                    data-aos="fade-in">
 
                 <h2 class="text-2xl font-bold text-[#050817] mb-6">Full Storage: Who Is Responsible?</h2>
-                <p class="text-[#64748B] mb-8 leading-relaxed">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself</p>
+                <p class="text-[#64748B] mb-8 leading-relaxed">But I must explain to you how all this mistaken idea of
+                    denouncing pleasure and praising pain was born and I will give you a complete account of the system,
+                    and expound the actual teachings of the great explorer of the truth, the master-builder of human
+                    happiness. No one rejects, dislikes, or avoids pleasure itself</p>
 
                 <h3 class="text-lg font-bold text-[#050817] mb-6">Key Points To Remember:</h3>
                 <ul class="space-y-4 mb-12 text-[#64748B]">
-                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Suspendisse ullamcorper diam sit amet nunc auctor, a lacinia augue ornare.</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Morbi sed enim lobortis, mollis nunc non, facilisis magna.</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Praesent convallis tellus quis metus dapibus, vitae bibendum dui gravida.</li>
-                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/></svg>Pellentesque bibendum risus luctus dolor consequat, et bibendum est tincidunt.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                        </svg>Suspendisse ullamcorper diam sit amet nunc auctor, a lacinia augue ornare.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                        </svg>Morbi sed enim lobortis, mollis nunc non, facilisis magna.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                        </svg>Praesent convallis tellus quis metus dapibus, vitae bibendum dui gravida.</li>
+                    <li class="flex items-start"><svg class="w-5 h-5 text-blue-600 mr-3 shrink-0 mt-0.5" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                        </svg>Pellentesque bibendum risus luctus dolor consequat, et bibendum est tincidunt.</li>
                 </ul>
 
-                <p class="text-[#64748B] mb-12 leading-relaxed pb-8 border-b border-slate-200">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter</p>
+                <p class="text-[#64748B] mb-12 leading-relaxed pb-8 border-b border-slate-200">But I must explain to you
+                    how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a
+                    complete account of the system, and expound the actual teachings of the great explorer of the truth,
+                    the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because
+                    it is pleasure, but because those who do not know how to pursue pleasure rationally encounter</p>
 
                 <!-- Tags & Share -->
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-16">
                     <div>
                         <span class="block text-sm font-bold text-[#050817] mb-3">Tags:</span>
                         <div class="flex gap-2">
-                            <a href="#" class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
-                            <a href="#" class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
+                            <a href="#"
+                                class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
+                            <a href="#"
+                                class="text-[10px] font-bold text-slate-400 bg-[#f1f5f9] px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
                         </div>
                     </div>
                     <div>
                         <span class="block text-sm font-bold text-[#050817] mb-3 sm:text-right">Share :</span>
                         <div class="flex gap-2">
-                            <a href="#" class="w-8 h-8 rounded-full bg-[#3b5998] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">f</a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-[#1da1f2] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">X</a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-[#0077b5] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">in</a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-[#bd081c] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">P</a>
+                            <a href="404.html"
+                                class="w-8 h-8 rounded-full bg-[#3b5998] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">f</a>
+                            <a href="404.html"
+                                class="w-8 h-8 rounded-full bg-[#1da1f2] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">X</a>
+                            <a href="404.html"
+                                class="w-8 h-8 rounded-full bg-[#0077b5] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">in</a>
+                            <a href="404.html"
+                                class="w-8 h-8 rounded-full bg-[#bd081c] text-white flex items-center justify-center hover:-translate-y-1 transition-transform">P</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Author Box -->
-                <div class="bg-white/60 backdrop-blur-md border border-white p-8 md:p-10 rounded-2xl mb-16 flex flex-col md:flex-row gap-8 items-start shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
-                    <div class="w-24 h-24 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0 mx-auto md:mx-0 shadow-lg">
-                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <div class="bg-white/60 backdrop-blur-md border border-white p-8 md:p-10 rounded-2xl mb-16 flex flex-col md:flex-row gap-8 items-start shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
+                    <div
+                        class="w-24 h-24 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0 mx-auto md:mx-0 shadow-lg">
+                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
                     </div>
                     <div class="text-center md:text-left flex-grow">
                         <div class="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
                             <div>
                                 <h4 class="text-xl font-bold text-[#050817] mb-1">Arulmani Design</h4>
-                                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">BY ADMIN</span>
+                                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">BY
+                                    ADMIN</span>
                             </div>
                             <div class="flex gap-3 text-[10px] font-bold text-slate-400">
                                 <a href="#" class="hover:text-blue-600">FB</a>
@@ -218,7 +223,9 @@
                                 <a href="#" class="hover:text-blue-600">PI</a>
                             </div>
                         </div>
-                        <p class="text-[#64748B] text-sm leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
+                        <p class="text-[#64748B] text-sm leading-relaxed">Sed ut perspiciatis unde omnis iste natus
+                            error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                            ab illo inventore veritatis et quasi architecto</p>
                     </div>
                 </div>
 
@@ -226,139 +233,226 @@
                 <h3 class="text-2xl font-bold text-[#050817] mb-8">3 Comments</h3>
                 <div class="space-y-8 mb-16">
                     <div class="flex gap-6">
-                        <div class="w-16 h-16 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0">
-                        <svg class="w-12 h-12 text-white mt-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-[#cbd5e1] border-2 border-blue-600 flex items-center justify-center overflow-hidden shrink-0">
+                            <svg class="w-12 h-12 text-white mt-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </div>
                         <div>
                             <div class="flex items-center justify-between mb-2">
-                                <h5 class="font-bold text-[#050817]">A WordPress Commenter <span class="text-[10px] text-blue-600 uppercase tracking-widest ml-3">MAY 18, 2022</span></h5>
-                                <a href="#" class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1">Reply <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg></a>
+                                <h5 class="font-bold text-[#050817]">A WordPress Commenter <span
+                                        class="text-[10px] text-blue-600 uppercase tracking-widest ml-3">MAY 18,
+                                        2022</span></h5>
+                                <a href="#"
+                                    class="text-xs text-blue-600 font-bold hover:underline flex items-center gap-1">Reply
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                    </svg></a>
                             </div>
-                            <p class="text-[#64748B] text-sm leading-relaxed">To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.</p>
+                            <p class="text-[#64748B] text-sm leading-relaxed">To get started with moderating, editing,
+                                and deleting comments, please visit the Comments screen in the dashboard.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Reply Form -->
                 <h3 class="text-2xl font-bold text-[#050817] mb-4">Leave A Reply</h3>
-                <p class="text-[#64748B] text-sm mb-8">Your email address will not be published. Required fields are marked *</p>
+                <p class="text-[#64748B] text-sm mb-8">Your email address will not be published. Required fields are
+                    marked *</p>
                 <form class="space-y-6">
                     <div>
                         <label class="block text-sm text-[#64748B] mb-2">Comment *</label>
-                        <textarea rows="6" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors resize-none py-2"></textarea>
+                        <textarea rows="6"
+                            class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors resize-none py-2"></textarea>
                     </div>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div>
                             <label class="block text-sm text-[#64748B] mb-2">Name *</label>
-                            <input type="text" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                            <input type="text"
+                                class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
                         </div>
                         <div>
                             <label class="block text-sm text-[#64748B] mb-2">Email *</label>
-                            <input type="email" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                            <input type="email"
+                                class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
                         </div>
                         <div>
                             <label class="block text-sm text-[#64748B] mb-2">Website</label>
-                            <input type="url" class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
+                            <input type="url"
+                                class="w-full border-b border-slate-200 bg-transparent focus:border-blue-600 focus:outline-none transition-colors py-2">
                         </div>
                     </div>
                     <div class="flex items-center gap-3 pt-2">
-                        <input type="checkbox" id="save-info" class="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
-                        <label for="save-info" class="text-sm text-[#64748B]">Save my name, email, and website in the browser for the next time I comment</label>
+                        <input type="checkbox" id="save-info"
+                            class="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500">
+                        <label for="save-info" class="text-sm text-[#64748B]">Save my name, email, and website in the
+                            browser for the next time I comment</label>
                     </div>
-                    <button type="submit" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300 mt-4">Post Comment <svg class="w-4 h-4 inline-block ml-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></button>
+                    <button type="submit"
+                        class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-10 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300 mt-4">Post
+                        Comment <svg class="w-4 h-4 inline-block ml-1 -mt-0.5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></button>
                 </form>
 
             </div>
 
             <!-- Sidebar -->
             <div class="space-y-10">
-                
+
                 <!-- Search -->
-                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
                     <form class="flex">
-                        <input type="text" placeholder="Search ..." class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none">
-                        <button type="submit" class="bg-blue-600 text-white px-5 py-3 hover:bg-blue-700 transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></button>
+                        <input type="text" placeholder="Search ..."
+                            class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none">
+                        <button type="submit"
+                            class="bg-blue-600 text-white px-5 py-3 hover:bg-blue-700 transition-colors"><svg
+                                class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg></button>
                     </form>
                 </div>
 
                 <!-- Author Mini -->
-                <div class="bg-white p-8 text-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
-                    <div class="w-24 h-24 rounded-full bg-[#cbd5e1] border-[3px] border-blue-600 flex items-center justify-center overflow-hidden mx-auto mb-6 shadow-lg">
-                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <div class="bg-white p-8 text-center rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
+                    <div
+                        class="w-24 h-24 rounded-full bg-[#cbd5e1] border-[3px] border-blue-600 flex items-center justify-center overflow-hidden mx-auto mb-6 shadow-lg">
+                        <svg class="w-20 h-20 text-white mt-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
                     </div>
                     <h4 class="text-xl font-bold text-[#050817] mb-2">Arulmani Design</h4>
-                    <p class="text-xs text-[#64748B] mb-6">Designation : <span class="text-slate-400">Cloud Author</span></p>
+                    <p class="text-xs text-[#64748B] mb-6">Designation : <span class="text-slate-400">Cloud
+                            Author</span></p>
                     <div class="flex justify-center gap-3 text-white">
-                        <a href="#" class="w-7 h-7 rounded-full bg-[#3b5998] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">f</a>
-                        <a href="#" class="w-7 h-7 rounded-full bg-[#1da1f2] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">X</a>
-                        <a href="#" class="w-7 h-7 rounded-full bg-[#0077b5] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">in</a>
-                        <a href="#" class="w-7 h-7 rounded-full bg-[#bd081c] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">P</a>
+                        <a href="#"
+                            class="w-7 h-7 rounded-full bg-[#3b5998] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">f</a>
+                        <a href="#"
+                            class="w-7 h-7 rounded-full bg-[#1da1f2] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">X</a>
+                        <a href="#"
+                            class="w-7 h-7 rounded-full bg-[#0077b5] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">in</a>
+                        <a href="#"
+                            class="w-7 h-7 rounded-full bg-[#bd081c] flex items-center justify-center hover:-translate-y-1 transition-transform text-xs">P</a>
                     </div>
                 </div>
 
                 <!-- Recent Posts -->
-                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
                     <h4 class="text-lg font-bold text-[#050817] mb-6">Recent Post</h4>
                     <div class="space-y-6">
                         <div class="flex gap-4 items-center group">
-                            <img src="assets/images/blog/ccpa_compliance.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <img src="assets/images/blog/ccpa_compliance.webp" alt="Post"
+                                class="w-16 h-16 object-cover rounded-sm bg-white">
                             <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
-                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">CCPA Compliance Update</a>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY
+                                    17, 2020</span>
+                                <a href="#"
+                                    class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">CCPA
+                                    Compliance Update</a>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center group">
-                            <img src="assets/images/blog/object_storage.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <img src="assets/images/blog/object_storage.webp" alt="Post"
+                                class="w-16 h-16 object-cover rounded-sm bg-white">
                             <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
-                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Introducing Object Storage!</a>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY
+                                    17, 2020</span>
+                                <a href="#"
+                                    class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Introducing
+                                    Object Storage!</a>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center group">
-                            <img src="assets/images/blog/content_marketing.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <img src="assets/images/blog/content_marketing.webp" alt="Post"
+                                class="w-16 h-16 object-cover rounded-sm bg-white">
                             <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
-                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Content Marketing</a>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY
+                                    17, 2020</span>
+                                <a href="#"
+                                    class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Content
+                                    Marketing</a>
                             </div>
                         </div>
                         <div class="flex gap-4 items-center group">
-                            <img src="assets/images/blog/security_apis.webp" alt="Post" class="w-16 h-16 object-cover rounded-sm bg-white">
+                            <img src="assets/images/blog/security_apis.webp" alt="Post"
+                                class="w-16 h-16 object-cover rounded-sm bg-white">
                             <div>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY 17, 2020</span>
-                                <a href="#" class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Security APIs In Cloud</a>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">FEBRUARY
+                                    17, 2020</span>
+                                <a href="#"
+                                    class="text-sm font-bold text-[#050817] group-hover:text-blue-600 transition-colors leading-tight block">Security
+                                    APIs In Cloud</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Categories -->
-                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
                     <h4 class="text-lg font-bold text-[#050817] mb-6">Categories</h4>
                     <ul class="space-y-0 text-sm font-bold text-slate-500 uppercase tracking-widest text-[10px]">
-                        <li><a href="#" class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD & DATA</a></li>
-                        <li><a href="#" class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD ANALYTICS</a></li>
-                        <li><a href="#" class="flex items-center py-3 hover:text-blue-600 transition-colors"><svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg> CLOUD TECHNOLOGIES</a></li>
+                        <li><a href="#"
+                                class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg
+                                    class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg> CLOUD & DATA</a></li>
+                        <li><a href="#"
+                                class="flex items-center py-3 border-b border-slate-200 hover:text-blue-600 transition-colors"><svg
+                                    class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg> CLOUD ANALYTICS</a></li>
+                        <li><a href="#" class="flex items-center py-3 hover:text-blue-600 transition-colors"><svg
+                                    class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg> CLOUD TECHNOLOGIES</a></li>
                     </ul>
                 </div>
 
                 <!-- Tags -->
-                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
                     <h4 class="text-lg font-bold text-[#050817] mb-6">Popular Tags</h4>
                     <div class="flex flex-wrap gap-2">
-                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Development</a>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">SEO</a>
-                        <a href="#" class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Storage</a>
+                        <a href="#"
+                            class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Business</a>
+                        <a href="#"
+                            class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Development</a>
+                        <a href="#"
+                            class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Marketing</a>
+                        <a href="#"
+                            class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">SEO</a>
+                        <a href="#"
+                            class="text-[10px] font-bold text-slate-400 bg-white px-4 py-2 uppercase tracking-widest rounded-sm hover:bg-blue-600 hover:text-white transition-colors">Storage</a>
                     </div>
                 </div>
 
                 <!-- Newsletter -->
-                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300" data-aos="fade-up">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+                    data-aos="fade-up">
                     <h4 class="text-lg font-bold text-[#050817] mb-6">Newsletter</h4>
                     <form>
-                        <input type="email" placeholder="Email Address" class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none mb-4">
-                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300">Subscribe</button>
+                        <input type="email" placeholder="Email Address"
+                            class="w-full bg-white border-0 px-4 py-3 text-sm focus:ring-2 focus:ring-blue-600 outline-none mb-4">
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all duration-300">Subscribe</button>
                     </form>
                 </div>
 
@@ -366,22 +460,29 @@
 
         </div>
     </section>
-    
+
     <!-- FAQ Section -->
     <section class="py-24 bg-[#1b2336]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-            
+
             <!-- Header Row -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
                 <div>
-                    <span class="inline-flex items-center text-[#22c55e] text-sm font-bold tracking-widest uppercase mb-4">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span
+                        class="inline-flex items-center text-[#22c55e] text-sm font-bold tracking-widest uppercase mb-4">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
                         FAQS
                     </span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Frequently Asked Any<br>Questions Us</h2>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Frequently Asked
+                        Any<br>Questions Us</h2>
                 </div>
                 <div class="mt-6 md:mt-0">
-                    <a href="#" class="inline-flex items-center justify-center bg-[#22c55e] hover:bg-green-600 text-[#0f1525] font-bold py-3 px-8 rounded-full transition-colors">
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-[#22c55e] hover:bg-green-600 text-[#0f1525] font-bold py-3 px-8 rounded-full transition-colors">
                         View More
                     </a>
                 </div>
@@ -390,70 +491,94 @@
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <!-- FAQ Accordion -->
                 <div class="w-full lg:w-3/5 space-y-4">
-                    
+
                     <!-- Accordion Item 1 (Open) -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="true">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#22c55e] text-[#0f1525] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#22c55e] text-[#0f1525] font-bold text-left transition-colors">
                             <span class="text-lg">Where Can I Get Some?</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#f59e0b] rounded text-[#0f1525] text-xl font-bold faq-icon transition-transform">-</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#f59e0b] rounded text-[#0f1525] text-xl font-bold faq-icon transition-transform">-</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] p-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-[500px] opacity-100">
-                            WEEPN provides enhanced security, privacy, and unrestricted internet access. With our advanced encryption, no-logs policy, and global server network, you can browse securely and bypass geo-restrictions with ease.
+                        <div
+                            class="faq-content bg-[#24304d] p-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-[500px] opacity-100">
+                            WEEPN provides enhanced security, privacy, and unrestricted internet access. With our
+                            advanced encryption, no-logs policy, and global server network, you can browse securely and
+                            bypass geo-restrictions with ease.
                         </div>
                     </div>
 
                     <!-- Accordion Item 2 -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="false">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
                             <span class="text-lg">What Is A VPN And How Does It Work?</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
-                            A VPN creates a secure, encrypted connection between your device and the internet, ensuring your privacy and anonymity.
+                        <div
+                            class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
+                            A VPN creates a secure, encrypted connection between your device and the internet, ensuring
+                            your privacy and anonymity.
                         </div>
                     </div>
 
                     <!-- Accordion Item 3 -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="false">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
                             <span class="text-lg">How To Get Weepn With Activation Code ?</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
-                            You can easily activate your subscription by entering the activation code in your account dashboard.
+                        <div
+                            class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
+                            You can easily activate your subscription by entering the activation code in your account
+                            dashboard.
                         </div>
                     </div>
 
                     <!-- Accordion Item 4 -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="false">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
                             <span class="text-lg">What Payment Methods Does Weepn Accept ?</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
+                        <div
+                            class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
                             We accept all major credit cards, PayPal, and various cryptocurrencies for maximum privacy.
                         </div>
                     </div>
 
                     <!-- Accordion Item 5 -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="false">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
                             <span class="text-lg">Will WEEPN Slow Down My Internet Connection?</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
-                            While all VPNs can slightly reduce speeds due to encryption overhead, our ultra-fast servers ensure the impact is barely noticeable.
+                        <div
+                            class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
+                            While all VPNs can slightly reduce speeds due to encryption overhead, our ultra-fast servers
+                            ensure the impact is barely noticeable.
                         </div>
                     </div>
 
                     <!-- Accordion Item 6 -->
                     <div class="faq-item rounded-lg overflow-hidden" data-open="false">
-                        <button class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
+                        <button
+                            class="faq-btn w-full flex items-center justify-between p-6 bg-[#24304d] text-white hover:bg-[#2a3857] font-bold text-left transition-colors">
                             <span class="text-lg">Manual Weepn Connection Setup On IPad / IPhone</span>
-                            <span class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
+                            <span
+                                class="w-8 h-8 flex items-center justify-center bg-[#1e273d] rounded text-white text-xl font-bold faq-icon transition-transform">+</span>
                         </button>
-                        <div class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
-                            Our iOS app configures everything automatically, but you can also download standard IKEv2 profiles for manual setup.
+                        <div
+                            class="faq-content bg-[#24304d] px-6 text-sm text-slate-300 leading-relaxed font-semibold transition-all max-h-0 opacity-0 overflow-hidden">
+                            Our iOS app configures everything automatically, but you can also download standard IKEv2
+                            profiles for manual setup.
                         </div>
                     </div>
 
@@ -461,7 +586,8 @@
 
                 <!-- 3D Illustration -->
                 <div class="w-full lg:w-2/5 flex justify-center">
-                    <img src="assets/images/faq_illustration.webp" alt="FAQ Illustration" class="w-full max-w-md object-contain mix-blend-screen drop-shadow-2xl">
+                    <img src="assets/images/faq_illustration.webp" alt="FAQ Illustration"
+                        class="w-full max-w-md object-contain mix-blend-screen drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -470,20 +596,33 @@
     <!-- CTA Section -->
     <section class="py-24 bg-slate-50 text-center border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-            <span class="text-xs font-bold text-blue-600 tracking-widest uppercase mb-6 inline-block border-b-2 border-blue-600 pb-1">OUR OFFER</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#050817] mb-10 leading-tight">Register For Our Free 7 Day Trial<br class="hidden md:block"> Now</h2>
-            
+            <span
+                class="text-xs font-bold text-blue-600 tracking-widest uppercase mb-6 inline-block border-b-2 border-blue-600 pb-1">OUR
+                OFFER</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#050817] mb-10 leading-tight">Register For Our Free 7 Day
+                Trial<br class="hidden md:block"> Now</h2>
+
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
                 <!-- Signup Free Button -->
-                <a href="signup.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded shadow-lg transition-all group">
+                <a href="signup.html"
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded shadow-lg transition-all group">
                     Signup Free
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
-                
+
                 <!-- Get Started Button -->
-                <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded shadow-lg shadow-blue-600/30 transition-all group">
+                <a href="#"
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded shadow-lg shadow-blue-600/30 transition-all group">
                     Get Started
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -493,20 +632,28 @@
     <footer class="bg-[#020617] pt-20 pb-10 text-slate-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-                
+
                 <!-- Column 1 -->
                 <div class="footer-col opacity-0">
-                    <a href="index.html" class="flex items-center mb-6"><img src="assets/images/logo.webp" alt="Stackly Logo" class="h-16 w-auto object-contain brightness-0 invert"></a>
+                    <a href="index.html" class="flex items-center mb-6"><img src="assets/images/logo.webp"
+                            alt="Stackly Logo" class="h-16 w-auto object-contain brightness-0 invert"></a>
                     <p class="text-sm text-[#94A3B8] mb-8 leading-relaxed">
-                        Your premium technology partner for modern cloud business. Build, scale, secure, and manage your digital operations with Stackly.
+                        Your premium technology partner for modern cloud business. Build, scale, secure, and manage your
+                        digital operations with Stackly.
                     </p>
                     <div class="flex gap-4">
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(36,99,255,0.5)]">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        <a href="404.html"
+                            class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(36,99,255,0.5)]">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
                         </a>
                         <!-- Similar icons for FB, IG, LinkedIn omitted for brevity but representable via generic icons -->
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">in</a>
-                        <a href="404.html" class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">f</a>
+                        <a href="404.html"
+                            class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">in</a>
+                        <a href="404.html"
+                            class="social-icon w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-blue-600 hover:border-transparent hover:-translate-y-1 hover:text-white transition-all">f</a>
                     </div>
                 </div>
 
@@ -514,12 +661,54 @@
                 <div class="footer-col opacity-0">
                     <h4 class="text-white font-bold tracking-wider mb-6">COMPANY</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Home</a></li>
-                        <li><a href="about.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>About Us</a></li>
-                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Services</a></li>
-                        <li><a href="blog.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Blog</a></li>
-                        <li><a href="domain.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Domain</a></li>
-                        <li><a href="contact.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Contact</a></li>
+                        <li><a href="index.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Home</a></li>
+                        <li><a href="about.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>About Us</a></li>
+                        <li><a href="services.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Services</a></li>
+                        <li><a href="blog.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Blog</a></li>
+                        <li><a href="domain.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Domain</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-[#F5A400]"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Contact</a></li>
                     </ul>
                 </div>
 
@@ -527,12 +716,54 @@
                 <div class="footer-col opacity-0">
                     <h4 class="text-white font-bold tracking-wider mb-6">EXPLORE</h4>
                     <ul class="space-y-3">
-                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cloud Hosting</a></li>
-                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cloud Analytics</a></li>
-                        <li><a href="services.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Cyber Security</a></li>
-                        <li><a href="login.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Login</a></li>
-                        <li><a href="signup.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>Signup</a></li>
-                        <li><a href="404.html" class="text-sm hover:text-white transition-colors flex items-center group"><span class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg class="w-3 h-3 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>404 Page</a></li>
+                        <li><a href="services.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Cloud Hosting</a></li>
+                        <li><a href="services.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Cloud Analytics</a></li>
+                        <li><a href="services.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Cyber Security</a></li>
+                        <li><a href="login.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Login</a></li>
+                        <li><a href="signup.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>Signup</a></li>
+                        <li><a href="404.html"
+                                class="text-sm hover:text-white transition-colors flex items-center group"><span
+                                    class="w-0 overflow-hidden group-hover:w-3 transition-all text-blue-500"><svg
+                                        class="w-3 h-3 inline-block" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg></span>404 Page</a></li>
                     </ul>
                 </div>
 
@@ -540,16 +771,21 @@
                 <div class="footer-col opacity-0">
                     <h4 class="text-white font-bold tracking-wider mb-6">NEWSLETTER</h4>
                     <p class="text-sm mb-6 leading-relaxed">
-                        Subscribe to receive exclusive cloud insights, technology updates, and Stackly business solutions.
+                        Subscribe to receive exclusive cloud insights, technology updates, and Stackly business
+                        solutions.
                     </p>
                     <form id="newsletter-form" class="relative">
-                        <div class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-full border border-white/10 focus-within:border-blue-500 transition-colors">
-                            <input type="email" placeholder="Email Address" required class="bg-transparent border-none outline-none text-white px-4 py-3 w-full text-sm placeholder-slate-400 focus:ring-0">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-105 shadow-[0_0_15px_rgba(36,99,255,0.4)] mt-2 sm:mt-0">
+                        <div
+                            class="flex flex-col sm:flex-row bg-white/10 p-1 rounded-full border border-white/10 focus-within:border-blue-500 transition-colors">
+                            <input type="email" placeholder="Email Address" required
+                                class="bg-transparent border-none outline-none text-white px-4 py-3 w-full text-sm placeholder-slate-400 focus:ring-0">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-105 shadow-[0_0_15px_rgba(36,99,255,0.4)] mt-2 sm:mt-0">
                                 Subscribe
                             </button>
                         </div>
-                        <p id="newsletter-success" class="absolute -bottom-8 left-0 text-sm text-green-400 hidden">Thanks for subscribing!</p>
+                        <p id="newsletter-success" class="absolute -bottom-8 left-0 text-sm text-green-400 hidden">
+                            Thanks for subscribing!</p>
                     </form>
                 </div>
             </div>
@@ -572,10 +808,10 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <!-- Custom Scripts -->
     <script src="js/main.js?v=4"></script>
     <script src="js/navbar.js"></script>
@@ -584,17 +820,17 @@
 
     <!-- FAQ Accordion Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const faqItems = document.querySelectorAll('.faq-item');
-            
+
             faqItems.forEach(item => {
                 const btn = item.querySelector('.faq-btn');
                 const content = item.querySelector('.faq-content');
                 const icon = item.querySelector('.faq-icon');
-                
+
                 btn.addEventListener('click', () => {
                     const isOpen = item.getAttribute('data-open') === 'true';
-                    
+
                     // Close all other items first (optional, but requested for typical accordion)
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
@@ -602,13 +838,13 @@
                             const otherBtn = otherItem.querySelector('.faq-btn');
                             const otherContent = otherItem.querySelector('.faq-content');
                             const otherIcon = otherItem.querySelector('.faq-icon');
-                            
+
                             otherBtn.classList.remove('bg-[#22c55e]', 'text-[#0f1525]');
                             otherBtn.classList.add('bg-[#24304d]', 'text-white', 'hover:bg-[#2a3857]');
-                            
+
                             otherContent.classList.remove('max-h-[500px]', 'opacity-100', 'p-6');
                             otherContent.classList.add('max-h-0', 'opacity-0', 'px-6', 'overflow-hidden');
-                            
+
                             otherIcon.textContent = '+';
                             otherIcon.classList.remove('bg-[#f59e0b]', 'text-[#0f1525]');
                             otherIcon.classList.add('bg-[#1e273d]', 'text-white');
@@ -620,10 +856,10 @@
                         item.setAttribute('data-open', 'true');
                         btn.classList.add('bg-[#22c55e]', 'text-[#0f1525]');
                         btn.classList.remove('bg-[#24304d]', 'text-white', 'hover:bg-[#2a3857]');
-                        
+
                         content.classList.add('max-h-[500px]', 'opacity-100', 'p-6');
                         content.classList.remove('max-h-0', 'opacity-0', 'px-6', 'overflow-hidden');
-                        
+
                         icon.textContent = '-';
                         icon.classList.add('bg-[#f59e0b]', 'text-[#0f1525]');
                         icon.classList.remove('bg-[#1e273d]', 'text-white');
@@ -631,10 +867,10 @@
                         item.setAttribute('data-open', 'false');
                         btn.classList.remove('bg-[#22c55e]', 'text-[#0f1525]');
                         btn.classList.add('bg-[#24304d]', 'text-white', 'hover:bg-[#2a3857]');
-                        
+
                         content.classList.remove('max-h-[500px]', 'opacity-100', 'p-6');
                         content.classList.add('max-h-0', 'opacity-0', 'px-6', 'overflow-hidden');
-                        
+
                         icon.textContent = '+';
                         icon.classList.remove('bg-[#f59e0b]', 'text-[#0f1525]');
                         icon.classList.add('bg-[#1e273d]', 'text-white');
@@ -643,7 +879,7 @@
             });
         });
     </script>
-    
+
     <!-- Bulletproof Inline 404 Redirects for Blog Page -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -669,7 +905,7 @@
                     window.location.href = '404.html';
                 });
             }
-            
+
             // 3. Add required to search form and handle submit
             const searchInput = document.querySelector('input[placeholder="Search ..."]');
             const searchForm = searchInput ? searchInput.closest('form') : null;
@@ -696,24 +932,24 @@
             if (!target) return;
 
             let text = target.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
-            
+
             // Check container for headers
             let panel = target.closest('.rounded-2xl');
             let panelTitle = panel && panel.querySelector('h4') ? panel.querySelector('h4').textContent : '';
-            
+
             let isRecentPost = panelTitle.includes('Recent Post');
             let isCategory = panelTitle.includes('Categories');
             let isPopularTag = panelTitle.includes('Popular Tags');
-            
+
             // Tags inside the article
             let isArticleTag = target.parentElement && target.parentElement.previousElementSibling && target.parentElement.previousElementSibling.textContent.includes('Tags:');
-            
+
             let isReply = text === 'reply';
-            
+
             // Social icons (both circular and text-based)
             let isSocialText = ['fb', 'tw', 'in', 'pi', 'f', 'x', 'p'].includes(text);
             let isSocialIcon = target.querySelector('i') || target.querySelector('svg') || target.classList.contains('rounded-full');
-            
+
             // Sometimes social buttons don't have text or we missed them, so if they're in a social container:
             let isSocialContainer = target.closest('.flex.items-center.gap-4') || target.closest('.social-links');
 
@@ -726,5 +962,5 @@
         }, true);
     </script>
 </body>
-</html>
 
+</html>
