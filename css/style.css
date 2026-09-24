@@ -231,3 +231,17 @@ body {
 .pause-on-hover:hover .animate-marquee2 {
   animation-play-state: paused;
 }
+
+/* Continuous Seamless Marquee (translates 0% to -50% for duplicated track) */
+.animate-marquee-infinite {
+  animation: marquee-infinite 25s linear infinite;
+}
+
+@keyframes marquee-infinite {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
