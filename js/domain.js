@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
                                 ${isAvailable ? `<span class="text-lg font-bold text-slate-900">$${price}/yr</span>` : ''}
-                                <button class="px-6 py-2 rounded-lg font-semibold transition-colors ${isAvailable ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-slate-100 text-slate-400 cursor-not-allowed'}" ${!isAvailable ? 'disabled' : ''}>
+                                <button ${isAvailable ? 'onclick="window.location.href=\'404.html\'"' : ''} class="px-6 py-2 rounded-lg font-semibold transition-colors ${isAvailable ? 'bg-blue-600 text-white hover:bg-blue-700 cursor-pointer' : 'bg-slate-100 text-slate-400 cursor-not-allowed'}" ${!isAvailable ? 'disabled' : ''}>
                                     ${isAvailable ? 'Select' : 'Unavailable'}
                                 </button>
                             </div>
@@ -45,6 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 resultsContainer.innerHTML = html;
             }, 1200);
+        });
+
+        // Event listener for Select button clicks
+        resultsContainer.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (btn && btn.textContent.trim().toLowerCase() === 'select') {
+                e.preventDefault();
+                window.location.href = '404.html';
+            }
         });
     }
 });
