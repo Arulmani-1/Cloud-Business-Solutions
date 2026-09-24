@@ -726,6 +726,35 @@
                         </table>
                     </div>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const supportTab = document.getElementById('tab-support');
+                        if (supportTab) {
+                            const filterSelect = supportTab.querySelector('select');
+                            const rows = supportTab.querySelectorAll('tbody tr');
+                            
+                            if (filterSelect && rows) {
+                                filterSelect.addEventListener('change', (e) => {
+                                    const filterValue = e.target.value.toLowerCase();
+                                    
+                                    rows.forEach(row => {
+                                        const statusCell = row.querySelector('td:nth-child(4)');
+                                        if (statusCell) {
+                                            const statusText = statusCell.textContent.trim().toLowerCase();
+                                            if (filterValue === 'all tickets') {
+                                                row.style.display = '';
+                                            } else if (statusText.includes(filterValue)) {
+                                                row.style.display = '';
+                                            } else {
+                                                row.style.display = 'none';
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                        }
+                    });
+                </script>
             </div>
 
             <!-- Tab 5: Billing & Revenue -->
