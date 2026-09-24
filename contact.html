@@ -6,6 +6,8 @@
     <title>Stackly | Contact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
@@ -199,13 +201,17 @@
             <h2 class="text-4xl lg:text-5xl font-bold text-[#050817] mb-12 leading-tight">Register For Our Free 7 Day Trial<br>Now</h2>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="signup.html" class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-[#0f172a] rounded-lg hover:bg-black transition-colors shadow-lg shadow-slate-900/20 group">
-                    Signup Free
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="signup.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-white bg-[#0f172a] rounded-xl hover:bg-black transition-colors shadow-lg shadow-slate-900/20 group">
+                    <span>Signup Free</span>
+                    <span class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-[10px] shrink-0 group-hover:bg-blue-700 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
-                <a href="services.html" class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 group">
-                    Get Started
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="services.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 group">
+                    <span>Get Started</span>
+                    <span class="w-6 h-6 rounded-full bg-white text-blue-600 flex items-center justify-center text-[10px] shrink-0 group-hover:bg-slate-100 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
         </div>

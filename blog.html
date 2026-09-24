@@ -7,6 +7,8 @@
     <title>Stackly | Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -762,8 +764,11 @@
                     <h4 class="text-white font-bold text-2xl mt-1 mb-2">Terraform Provider For Cloud Automation</h4>
                     <p class="text-slate-400 text-sm">Learn how infrastructure-as-code transforms your cloud deployment workflow with Stackly's Terraform integration.</p>
                 </div>
-                <a href="404.html" class="flex-shrink-0 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-8 py-3.5 rounded-xl transition-colors whitespace-nowrap shadow-lg shadow-blue-700/30">
-                    Read Next →
+                <a href="404.html" class="flex-shrink-0 inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-8 py-3.5 rounded-xl transition-colors whitespace-nowrap shadow-lg shadow-blue-700/30 group">
+                    <span>Read Next</span>
+                    <span class="w-6 h-6 rounded-full bg-white text-blue-600 flex items-center justify-center text-[10px] shrink-0 group-hover:bg-slate-100 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
 
@@ -914,24 +919,20 @@
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
                 <!-- Signup Free Button -->
                 <a href="signup.html"
-                    class="w-full sm:w-auto inline-flex items-center justify-center bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded shadow-lg transition-all group">
-                    Signup Free
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg transition-all group">
+                    <span>Signup Free</span>
+                    <span class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-[10px] shrink-0 group-hover:bg-blue-700 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
 
                 <!-- Get Started Button -->
-                <a href="#"
-                    class="w-full sm:w-auto inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded shadow-lg shadow-blue-600/30 transition-all group">
-                    Get Started
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
+                <a href="signup.html"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-blue-600/30 transition-all group">
+                    <span>Get Started</span>
+                    <span class="w-6 h-6 rounded-full bg-white text-blue-600 flex items-center justify-center text-[10px] shrink-0 group-hover:bg-slate-100 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
         </div>
