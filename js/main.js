@@ -179,4 +179,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Open the first one by default
         faqItems[0].querySelector('.faq-btn').click();
     }
+
+    // Global Action Button & Social Icon Redirects
+    document.body.addEventListener('click', (e) => {
+        const target = e.target.closest('a, button');
+        if (!target) return;
+        
+        const text = target.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+        
+        // List of all action buttons across the site
+        const targetKeywords = [
+            'explore solutions', 'get started', 'get it now', 
+            'learn more', 'read more', 'purchase now', 
+            'signup free', 'view more', 'explore the technology',
+            'deploy new service', 'manage', 'update payment method', 
+            'download all', 'submit ticket', 'upload new', 'remove', 
+            'save changes', 'update password', 'delete account',
+            'generate new key', 'copy', 'view all', 'add user', 
+            'report', 'export', 'view ticket', 'save global config', 
+            'update smtp', 'clear system cache', 'force database restart'
+        ];
+        
+        // Check for text match
+        let isMatch = targetKeywords.some(kw => text === kw || text.includes(kw));
+        
+        // Check for social icons
+        let isSocial = target.classList.contains('social-icon') || 
+                       target.classList.contains('social-share') || 
+                       target.closest('.social-links') || 
+                       target.closest('.floating-social') ||
+                       target.closest('.sticky-social') ||
+                       target.classList.contains('bg-white/10') && target.querySelector('i') || // common social icons in footer
+                       text === 'f' || text === 'x' || text === 'in' || text === 'p' ||
+                       target.querySelector('.fa-facebook, .fa-twitter, .fa-instagram, .fa-linkedin');
+        
+        // Check for icon buttons (Edit, Delete, Download in tables)
+        let isTableIcon = target.closest('td') && target.querySelector('svg');
+        
+        if ((isMatch && text.length < 50) || isSocial || isTableIcon) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = '404.html';
+        }
+    });
 });

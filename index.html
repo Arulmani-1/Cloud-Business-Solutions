@@ -936,5 +936,38 @@
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const targetKeywords = [
+                'explore solutions', 'get started', 'get it now', 
+                'learn more', 'read more', 'purchase now', 
+                'signup free', 'view more', 'explore the technology'
+            ];
+            
+            document.querySelectorAll('a, button').forEach(el => {
+                const text = el.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+                
+                let isMatch = targetKeywords.some(kw => text === kw || text.includes(kw));
+                let isSocial = el.classList.contains('social-icon') || 
+                               el.classList.contains('social-share') || 
+                               el.closest('.social-links') || 
+                               el.closest('.floating-social') ||
+                               el.closest('.sticky-social') ||
+                               text === 'f' || text === 'x' || text === 'in' || text === 'p' ||
+                               el.querySelector('.fa-facebook, .fa-twitter, .fa-instagram, .fa-linkedin');
+                
+                if ((isMatch && text.length < 50) || isSocial) {
+                    if (el.tagName === 'A') {
+                        el.href = '404.html';
+                    } else {
+                        el.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            window.location.href = '404.html';
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
