@@ -198,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'save changes', 'update password', 'delete account',
             'generate new key', 'copy', 'view all', 'add user',
             'report', 'export', 'view ticket', 'save global config',
-            'update smtp', 'clear system cache', 'force database restart'
+            'update smtp', 'clear system cache', 'force database restart',
+            'explore more', 'search', 'select', 'forgot password?'
         ];
 
         // Check for text match
