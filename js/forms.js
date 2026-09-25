@@ -38,7 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    setupForm('contact-form', 'contact-success');
+    // Redirect to 404 page after contact form submission
+    setupForm('contact-form', 'contact-success', (form) => {
+        form.reset();
+        setTimeout(() => {
+            window.location.href = '404.html';
+        }, 1500);
+    });
     
     // Login form specific logic
     setupForm('login-form', 'login-success', (form) => {
